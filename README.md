@@ -18,15 +18,17 @@ age decay; it includes bias and does not guarantee 68% coverage.
 ## Run an offline example
 
 ```sh
+git clone https://github.com/alecwang310/Bandori_Score_Predictor.git
+cd Bandori_Score_Predictor
 python3 -m pip install -r dist/requirements.txt
 python3 dist/predict.py --event 326 --as-of '2026-10-17 20:00' \
     --snapshot dist/examples/event_326_20261017_2000.json.gz --no-save
 ```
 
-For the latest event using the adjacent downloaded data directory:
+For the latest event using an existing downloaded data directory:
 
 ```sh
-python3 dist/predict.py --event latest --data ../bandori_cn_data
+python3 dist/predict.py --event latest --data /path/to/bandori_cn_data
 ```
 
 The default issue time is the latest 08:00 within the event. Use `--as-of now`
@@ -53,13 +55,15 @@ fits also requires the omitted datasets and experiment arrays. This is a copy,
 not a file synchronization link: later parent-workspace edits must be copied in
 before committing them here.
 
-## Local Git
+## Verification
 
-Initialized on `main`, with an initial snapshot commit and no remote configured.
-No hosting service or public repository is created.
+Check the frozen package and the focused production/uncertainty regression tests:
 
 ```sh
-git status
-git log --oneline -1
 python3 dist/verify_package.py
+OPENBLAS_NUM_THREADS=1 PYTHONPATH=tests:. python3 -B -m unittest test_stack_sigma -v
 ```
+
+The upstream repository is
+[alecwang310/Bandori_Score_Predictor](https://github.com/alecwang310/Bandori_Score_Predictor).
+Licensed under the [MIT License](LICENSE).
