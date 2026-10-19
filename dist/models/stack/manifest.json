@@ -1,0 +1,112 @@
+{
+  "name": "stack",
+  "kind": "bandori_cn_joint_deployment_v1",
+  "api_version": 1,
+  "fit_cutoff": 1790647200.0,
+  "supervised_events": 30,
+  "assets": {
+    "config.json": "26bceafb54d9e6c26bccbda019163c8d1ceb639f083f0f81cb32e5aa423c137a",
+    "reference_bank.json": "3a25f14fda1252ed682b3994288618780c12100fb43665f1360e7831a8864a6c",
+    "reference_bank.npz": "36ca2cdac046c9a106ed4ec4d4728e4f966b497b8f5ee8fbe2af3f8d5e3e6049",
+    "joint_model.npz": "fde9ca2f18bc0bc9f31c1e9e97fb1c0845ccf14a5e927b5db0270759f3b419d4",
+    "compression.npz": "d7fd93fcfa7fc4adf6b4eb716b34d0e61394a8eff48f81e0fd9e3a637ed0768d",
+    "input_masks.npz": "ba8ca0d610b1293717310c6c6accd6433857ebda33e8f6a60c4d2801af5547b4",
+    "deployment.json": "04050e7a6213ca7960159d1da7ddbfd710f95c558a74227e00a20b758a7f4414",
+    "sigma.json": "e54ffc6ad2da3919150ddb547c5323993e2f350be8af3fe8b6aa66a42bfc3173"
+  },
+  "training_provenance": {
+    "recipe": "bandori.sweep_harness.prepare_fit + fit_jointnet; exported by dist/tools/export_stack_package.py; validated by runs/sweep_stack_20261019/train_post12_30_test325.py",
+    "scope": "30 supervised events: 12 strictly-post-rule (311, 314-324) + 18 most recent older events; 312/313 are pre-rule starts and are not part of the post-rule block",
+    "supervised_event_ids": [
+      293,
+      294,
+      295,
+      296,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      311,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324
+    ],
+    "reference_pool": "319 events through 324 (fold-train 315 + 321-324); analog/daily features use this pool, supervised labels only the 30",
+    "features": "finished pca layout (1168 columns); selected 600 = explicit block cols 16..111 + rule block cols 664..1167 (block_cols({'rule','expl'}))",
+    "architecture": "JointNet hidden 8, seed 1729, 240 epochs, learning_rate 0.01, weight_decay 0.003, bias_penalty 3, weights mean/scale/a/b/v/d",
+    "multiplier": "exp(gain*delta) with gain 1.0",
+    "weighted_cells": 15132,
+    "fit_cutoff_basis": "start of event 325 = 1790647200; labels of 321-324 verified available before 325; 325/326 excluded from fitting",
+    "validation": {
+      "scope": "held-out event 325",
+      "external_24pts": {
+        "rows": 24,
+        "mape": 0.04496268238970286,
+        "bias": 0.015443911889195009
+      },
+      "standing_164rows": {
+        "rows": 164,
+        "mape": 0.07545191815010358,
+        "bias": -0.028351065460577068
+      }
+    },
+    "exported_at": "2026-10-19T14:06:00.788197+00:00",
+    "sigma": {
+      "method": "stack_event_loo_rms",
+      "run": "runs/stack_sigma_20261019",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320
+      ],
+      "excluded_event_ids": [
+        321,
+        322,
+        323,
+        324,
+        325,
+        326
+      ]
+    }
+  },
+  "limitations": [
+    "Single held-out validation: event 325 scored 4.50% (external 24 fresh-input points) and 7.55% (standing 164 focal-tier rows) MAPE; descriptive, not an independent fresh test",
+    "Events 325/326 are excluded from fitting (fit_cutoff = start of event 325)",
+    "Hyperparameters (hidden 8, seed 1729, 240 epochs, gain 1.0) are inherited from the frozen sweep recipe and were not re-selected for this exact 30-event scope",
+    "Supervised labels include closing-tracker proxies; RMS-like errors contain systematic bias and carry no coverage guarantee",
+    "Reference/analog pool stops at event 324; forecasts for events inside that pool are rejected",
+    "Eight actual post-rule events (311, 314-320); each held event is removed from fold training and all references",
+    "LOO can train on later pre-321 events: event transfer estimate, not a chronological backtest",
+    "Model-family design used earlier inspected experiments; this is approximate calibration, not an independent coverage test",
+    "Events 321-326 excluded from residual calibration; 321-324 remain in the production network fit",
+    "RMS includes systematic bias; no normality or 68% coverage guarantee; proxy closing labels are not official finals",
+    "Same-tier neighboring horizon bins are pooled until four event clusters; no cross-tier borrowing",
+    "No sigma for unlabeled tiers or observations older than one hour; no event-type-specific or outage calibration",
+    "Production has more post-rule training events; sigma is not automatically reduced",
+    "Eight events provide weak support for very long events; extrapolation is explicitly flagged",
+    "Residual checkpoints are 08:00/20:00/21:00 CN; other issue times use the same hours-remaining buckets"
+  ]
+}

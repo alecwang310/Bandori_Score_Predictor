@@ -1,0 +1,213 @@
+{
+  "event_id": 325,
+  "generated_at_utc": "2026-10-19T12:26:34.866672+00:00",
+  "model_sha256": "353bf44c6014853d539ffe0f9c0b52d8c6e7895facb896c31ea99cb02449527b",
+  "benchmark_sha256": "cde65787de827c0a9fff5a6a5270033651edbc50631afc3eeb54a61660605ed5",
+  "data_manifest_sha256": "2c816fd4dfc359b216182ae247d62b7b3ea64215244c517b82f6e0b6c9bbf920",
+  "supervised_event_ids": [
+    311,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324
+  ],
+  "final_scores": {
+    "500": 12647536.0,
+    "1000": 9543389.0,
+    "1500": 8516669.0,
+    "2000": 7002130.0
+  },
+  "final_sources": {
+    "500": "post_close_tracker_proxy",
+    "1000": "post_close_tracker_proxy",
+    "1500": "post_close_tracker_proxy",
+    "2000": "post_close_tracker_proxy"
+  },
+  "duration_hours": 372.9997222222222,
+  "all_points": {
+    "Fresh": {
+      "points": 32,
+      "mape_percent": 8.690486989363187,
+      "signed_bias_percent": 7.612029749045194
+    },
+    "MASHIRO": {
+      "points": 32,
+      "mape_percent": 12.429676790807704,
+      "signed_bias_percent": -11.66746461773145
+    },
+    "RUI": {
+      "points": 32,
+      "mape_percent": 14.618371821353525,
+      "signed_bias_percent": -14.580370842348604
+    }
+  },
+  "fresh_only": {
+    "Fresh": {
+      "points": 24,
+      "mape_percent": 7.991951604650417,
+      "signed_bias_percent": 6.554008617559759
+    },
+    "MASHIRO": {
+      "points": 24,
+      "mape_percent": 11.726128259997367,
+      "signed_bias_percent": -10.70984536256236
+    },
+    "RUI": {
+      "points": 24,
+      "mape_percent": 14.359284711965701,
+      "signed_bias_percent": -14.30861673995914
+    }
+  },
+  "by_horizon": {
+    "219": {
+      "Fresh": {
+        "points": 4,
+        "mape_percent": 4.499776265830266,
+        "signed_bias_percent": 1.2855489593252474
+      },
+      "MASHIRO": {
+        "points": 4,
+        "mape_percent": 18.789346869935518,
+        "signed_bias_percent": -18.789346869935518
+      },
+      "RUI": {
+        "points": 4,
+        "mape_percent": 24.80841854075323,
+        "signed_bias_percent": -24.80841854075323
+      }
+    },
+    "195": {
+      "Fresh": {
+        "points": 4,
+        "mape_percent": 7.896352881882235,
+        "signed_bias_percent": 3.9730823913315003
+      },
+      "MASHIRO": {
+        "points": 4,
+        "mape_percent": 19.307060359670345,
+        "signed_bias_percent": -19.307060359670345
+      },
+      "RUI": {
+        "points": 4,
+        "mape_percent": 20.449377148075843,
+        "signed_bias_percent": -20.449377148075843
+      }
+    },
+    "171": {
+      "Fresh": {
+        "points": 4,
+        "mape_percent": 11.582869228585148,
+        "signed_bias_percent": 11.582869228585148
+      },
+      "MASHIRO": {
+        "points": 4,
+        "mape_percent": 15.226172882435476,
+        "signed_bias_percent": -15.226172882435476
+      },
+      "RUI": {
+        "points": 4,
+        "mape_percent": 19.291646225894038,
+        "signed_bias_percent": -19.291646225894038
+      }
+    },
+    "146": {
+      "Fresh": {
+        "points": 4,
+        "mape_percent": 10.877970235126472,
+        "signed_bias_percent": 10.877970235126472
+      },
+      "MASHIRO": {
+        "points": 4,
+        "mape_percent": 15.066613166595559,
+        "signed_bias_percent": -15.066613166595559
+      },
+      "RUI": {
+        "points": 4,
+        "mape_percent": 16.206740985412868,
+        "signed_bias_percent": -16.206740985412868
+      }
+    },
+    "123": {
+      "Fresh": {
+        "points": 4,
+        "mape_percent": 10.694216051876525,
+        "signed_bias_percent": 10.694216051876525
+      },
+      "MASHIRO": {
+        "points": 4,
+        "mape_percent": 14.014031599881882,
+        "signed_bias_percent": -14.014031599881882
+      },
+      "RUI": {
+        "points": 4,
+        "mape_percent": 14.584525313621121,
+        "signed_bias_percent": -14.584525313621121
+      }
+    },
+    "99": {
+      "Fresh": {
+        "points": 4,
+        "mape_percent": 12.481871195108882,
+        "signed_bias_percent": 12.422060823122075
+      },
+      "MASHIRO": {
+        "points": 4,
+        "mape_percent": 11.248083444456833,
+        "signed_bias_percent": -11.248083444456833
+      },
+      "RUI": {
+        "points": 4,
+        "mape_percent": 13.856988169518985,
+        "signed_bias_percent": -13.856988169518985
+      }
+    },
+    "27": {
+      "Fresh": {
+        "points": 4,
+        "mape_percent": 9.344663893428251,
+        "signed_bias_percent": 9.344663893428251
+      },
+      "MASHIRO": {
+        "points": 4,
+        "mape_percent": 2.825577408691668,
+        "signed_bias_percent": -2.4628240834186106
+      },
+      "RUI": {
+        "points": 4,
+        "mape_percent": 3.908484051369579,
+        "signed_bias_percent": -3.604476219330202
+      }
+    },
+    "3": {
+      "Fresh": {
+        "points": 4,
+        "mape_percent": 2.146176163067725,
+        "signed_bias_percent": 0.7158264095663336
+      },
+      "MASHIRO": {
+        "points": 4,
+        "mape_percent": 2.9605285947943565,
+        "signed_bias_percent": 2.7744154645426207
+      },
+      "RUI": {
+        "points": 4,
+        "mape_percent": 3.840794136182532,
+        "signed_bias_percent": -3.840794136182532
+      }
+    }
+  },
+  "limitations": [
+    "Retrospective replay on an already examined event; not a new prospective test",
+    "Closing tracker proxies, not independently verified official finals",
+    "External models may have different observation availability; publication times missing in our data use observation time",
+    "Last-known inputs across tracker gaps are reported separately; gaps are not proof of a server outage",
+    "No model fitting, hyperparameter changes, or uncertainty calibration changes in this comparison"
+  ]
+}

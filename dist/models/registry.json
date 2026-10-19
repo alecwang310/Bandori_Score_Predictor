@@ -1,0 +1,22 @@
+{
+ "api_version": 1,
+ "default": "stack",
+ "auto": {
+  "rule": "total scheduled duration > 240 hours -> ridge; otherwise fresh",
+  "threshold_hours": 240.0,
+  "above_threshold": "ridge",
+  "at_or_below_threshold": "fresh",
+  "selection_basis": "Explicit user instruction after inspecting event 325; not a test-independent routing rule"
+ },
+ "models": {
+  "fresh": {
+   "package": "fresh"
+  },
+  "ridge": {
+   "package": "ridge"
+  },
+  "stack": {
+   "package": "stack"
+  }
+ }
+}

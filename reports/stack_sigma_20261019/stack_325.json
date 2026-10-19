@@ -1,0 +1,1030 @@
+{
+  "api_version": 1,
+  "model": {
+    "name": "stack",
+    "kind": "bandori_cn_joint_deployment_v1",
+    "selection": "default",
+    "reason": "registry default stack; auto rule would select ridge"
+  },
+  "event_id": 325,
+  "event_name": "All☆Stars CiRCRiNG Fes!",
+  "event_type": "challenge",
+  "checkpoint_cn": "2026-10-14T20:00:00+08:00",
+  "closes_cn": "2026-10-14T22:59:59+08:00",
+  "hours_remaining": 2.999722222222222,
+  "total_duration_hours": 372.9997222222222,
+  "routing": {
+    "rule": "total scheduled duration > 240 hours -> ridge; otherwise fresh",
+    "threshold": 240.0,
+    "selected": "stack"
+  },
+  "predictions": [
+    {
+      "tier": 1,
+      "status": "ok",
+      "final": 260000000,
+      "current": 260000000,
+      "observed_at": "2026-10-14T11:50:47+00:00",
+      "score_age_hours": 0.15361055552959443,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "No supported same-tier Stack sigma for this forecast: unlabeled tier, stale input, or missing calibration package"
+      },
+      "detail": {
+        "baseline": 260000000.0,
+        "remaining_multiplier": 0.8203019335240245,
+        "raw_correction": -0.19808279488243477,
+        "supervised_training_targets": 72,
+        "trained": true
+      }
+    },
+    {
+      "tier": 10,
+      "status": "ok",
+      "final": 116258732,
+      "current": 116258732,
+      "observed_at": "2026-10-14T11:50:47+00:00",
+      "score_age_hours": 0.15361055552959443,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "No supported same-tier Stack sigma for this forecast: unlabeled tier, stale input, or missing calibration package"
+      },
+      "detail": {
+        "baseline": 116258732.0,
+        "remaining_multiplier": 0.6673907066929721,
+        "raw_correction": -0.40437963740524624,
+        "supervised_training_targets": 72,
+        "trained": true
+      }
+    },
+    {
+      "tier": 20,
+      "status": "ok",
+      "final": 63574775,
+      "current": 63428016,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 3579337.079323063,
+        "relative": 0.05630121505460402,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.016920483492410758,
+        "centered_relative_sd": 0.053698454866111606,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 20,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 63536977.61813827,
+        "remaining_multiplier": 1.3468830539177576,
+        "raw_correction": 0.29779307399901705,
+        "supervised_training_targets": 736,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 30,
+      "status": "ok",
+      "final": 48611427,
+      "current": 47712576,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 3403452.494239461,
+        "relative": 0.07001342491425856,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.04076044693320065,
+        "centered_relative_sd": 0.05692508791411968,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 30,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 48392972.26927343,
+        "remaining_multiplier": 1.3210684495674827,
+        "raw_correction": 0.2784408406757948,
+        "supervised_training_targets": 741,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 40,
+      "status": "ok",
+      "final": 43784807,
+      "current": 42834894,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 1889019.0556035605,
+        "relative": 0.04314325413387252,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.008735851873808652,
+        "centered_relative_sd": 0.042249559397688194,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 40,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 43584201.92829125,
+        "remaining_multiplier": 1.267719656939645,
+        "raw_correction": 0.23721974082926822,
+        "supervised_training_targets": 741,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 50,
+      "status": "ok",
+      "final": 36015626,
+      "current": 34844747,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 1932708.7063608079,
+        "relative": 0.05366306020505677,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.0037730963263840085,
+        "centered_relative_sd": 0.053530251023915204,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 50,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 35761702.78474008,
+        "remaining_multiplier": 1.2769192203248994,
+        "raw_correction": 0.24445031766891148,
+        "supervised_training_targets": 739,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 100,
+      "status": "ok",
+      "final": 23339151,
+      "current": 22023139,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 909811.3178948245,
+        "relative": 0.03898219424926059,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.016401884247098264,
+        "centered_relative_sd": 0.03536367715088287,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 100,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 23113434.157591984,
+        "remaining_multiplier": 1.2070233497167842,
+        "raw_correction": 0.18815728717830582,
+        "supervised_training_targets": 743,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 200,
+      "status": "ok",
+      "final": 16462802,
+      "current": 15596314,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 427518.79288134765,
+        "relative": 0.025968774506390083,
+        "method": "stack_event_loo_rms",
+        "relative_bias": 0.016573487482629313,
+        "centered_relative_sd": 0.019992417613356944,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 200,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 16262057.4188423,
+        "remaining_multiplier": 1.3015334777548409,
+        "raw_correction": 0.26354316756103735,
+        "supervised_training_targets": 743,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 300,
+      "status": "ok",
+      "final": 14223848,
+      "current": 13505936,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 341976.1693812915,
+        "relative": 0.024042451056935612,
+        "method": "stack_event_loo_rms",
+        "relative_bias": 0.009436582858976238,
+        "centered_relative_sd": 0.02211312634547228,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 300,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 14029186.18086625,
+        "remaining_multiplier": 1.3720233671234752,
+        "raw_correction": 0.3162865605897646,
+        "supervised_training_targets": 743,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 400,
+      "status": "ok",
+      "final": 13114189,
+      "current": 12347113,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 449469.87611402996,
+        "relative": 0.03427355485833169,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.008973515007873835,
+        "centered_relative_sd": 0.03307797743258397,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 400,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 12880092.129689515,
+        "remaining_multiplier": 1.439222987437438,
+        "raw_correction": 0.36410337589839004,
+        "supervised_training_targets": 743,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 500,
+      "status": "ok",
+      "final": 12256216,
+      "current": 11255278,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 658845.3023785412,
+        "relative": 0.0537560126533786,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.039954298774294635,
+        "centered_relative_sd": 0.03596335504155026,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 500,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 11927915.081446307,
+        "remaining_multiplier": 1.4880794207814674,
+        "raw_correction": 0.39748630916764294,
+        "supervised_training_targets": 743,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 1000,
+      "status": "ok",
+      "final": 9447814,
+      "current": 8844171,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 417581.1002609521,
+        "relative": 0.04419870038306767,
+        "method": "stack_event_loo_rms",
+        "relative_bias": 0.025831891681199422,
+        "centered_relative_sd": 0.03586416718289951,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 1000,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 9471874.046553712,
+        "remaining_multiplier": 0.9616687363630291,
+        "raw_correction": -0.0390852365131055,
+        "supervised_training_targets": 743,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 1500,
+      "status": "ok",
+      "final": 8402353,
+      "current": 7498122,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 305284.6312732178,
+        "relative": 0.03633323085488289,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.019355571825244455,
+        "centered_relative_sd": 0.030748422783486263,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 1500,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 8334912.389793912,
+        "remaining_multiplier": 1.08059421874327,
+        "raw_correction": 0.07751109237027232,
+        "supervised_training_targets": 284,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 2000,
+      "status": "ok",
+      "final": 6925921,
+      "current": 6253537,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 276783.5952432567,
+        "relative": 0.039963435223020406,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.019583603557070072,
+        "centered_relative_sd": 0.03483616836771892,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 2000,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 6721071.832872207,
+        "remaining_multiplier": 1.4381457674613933,
+        "raw_correction": 0.363354622354349,
+        "supervised_training_targets": 741,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 3000,
+      "status": "ok",
+      "final": 4585234,
+      "current": 4392042,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 243082.41727059142,
+        "relative": 0.05301417926993288,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.02240438072951995,
+        "centered_relative_sd": 0.048047340486142384,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 3000,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 4528249.565249257,
+        "remaining_multiplier": 1.4183622125576925,
+        "raw_correction": 0.3495028345302144,
+        "supervised_training_targets": 741,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 4000,
+      "status": "ok",
+      "final": 3434428,
+      "current": 3309527,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 209729.30346326277,
+        "relative": 0.06106673468282427,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.026981918764259934,
+        "centered_relative_sd": 0.054782498524814746,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 4000,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 3398424.344786305,
+        "remaining_multiplier": 1.4049956068476779,
+        "raw_correction": 0.3400341759820149,
+        "supervised_training_targets": 741,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 5000,
+      "status": "ok",
+      "final": 2848558,
+      "current": 2702812,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 188479.1498970757,
+        "relative": 0.06616651298554416,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.03240987578622573,
+        "centered_relative_sd": 0.05768541750033194,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 5000,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 2805784.5801243256,
+        "remaining_multiplier": 1.415381271295799,
+        "raw_correction": 0.34739894447916575,
+        "supervised_training_targets": 741,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 10000,
+      "status": "ok",
+      "final": 1359411,
+      "current": 1305963,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 60614.08253188067,
+        "relative": 0.04458848908231629,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.01712536375495814,
+        "centered_relative_sd": 0.041168620026717014,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 10000,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 1345946.7328523595,
+        "remaining_multiplier": 1.336736171309353,
+        "raw_correction": 0.29023094978429403,
+        "supervised_training_targets": 740,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 20000,
+      "status": "ok",
+      "final": 595405,
+      "current": 579924,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 15434.641944423289,
+        "relative": 0.025922929677149653,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.010687754320282836,
+        "centered_relative_sd": 0.023617158818023003,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 20000,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 592206.1929716023,
+        "remaining_multiplier": 1.26040545420759,
+        "raw_correction": 0.23143345825403608,
+        "supervised_training_targets": 731,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 30000,
+      "status": "ok",
+      "final": 322331,
+      "current": 315046,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 3908.919357037859,
+        "relative": 0.012127035119296185,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.003553861674611165,
+        "centered_relative_sd": 0.011594612886266318,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 30000,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 320652.6384843342,
+        "remaining_multiplier": 1.2992518307150083,
+        "raw_correction": 0.2617885839606521,
+        "supervised_training_targets": 701,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 40000,
+      "status": "ok",
+      "final": 185543,
+      "current": 181537,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 1824.99754386386,
+        "relative": 0.009835981653114697,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.0013426375074399787,
+        "centered_relative_sd": 0.0097439139776593,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 40000,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 184800.2695370466,
+        "remaining_multiplier": 1.227536246914373,
+        "raw_correction": 0.20500910930504362,
+        "supervised_training_targets": 663,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 50000,
+      "status": "ok",
+      "final": 110102,
+      "current": 107670,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 958.2565964008218,
+        "relative": 0.008703353221565655,
+        "method": "stack_event_loo_rms",
+        "relative_bias": 0.004047126604472253,
+        "centered_relative_sd": 0.007705136179634346,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 50000,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 109644.19296146845,
+        "remaining_multiplier": 1.2318181232975032,
+        "raw_correction": 0.2084912270197762,
+        "supervised_training_targets": 631,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 70000,
+      "status": "ok",
+      "final": 31768,
+      "current": 30910,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 613.1779291575793,
+        "relative": 0.01930174795887621,
+        "method": "stack_event_loo_rms",
+        "relative_bias": 0.0052158145813699635,
+        "centered_relative_sd": 0.01858366897361095,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 70000,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 31543.36097314439,
+        "remaining_multiplier": 1.3535277454920265,
+        "raw_correction": 0.30271432893269307,
+        "supervised_training_targets": 545,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    },
+    {
+      "tier": 100000,
+      "status": "ok",
+      "final": 7171,
+      "current": 6911,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 666.0661738144812,
+        "relative": 0.09288330411581107,
+        "method": "stack_event_loo_rms",
+        "relative_bias": -0.015152155598649741,
+        "centered_relative_sd": 0.09163907662228243,
+        "events": 7,
+        "effective_events": 6.990585719062427,
+        "rows": 19,
+        "source_tier": 100000,
+        "horizon_bucket": 0,
+        "source_buckets": [
+          0
+        ],
+        "horizon_fallback": false,
+        "observed_hours_range": [
+          1.9997222222222222,
+          14.999722222222223
+        ],
+        "outside_horizon_support": false,
+        "outside_duration_support": true,
+        "approximate": true,
+        "coverage_guaranteed": false
+      },
+      "detail": {
+        "baseline": 7077.5865726051425,
+        "remaining_multiplier": 1.5564153237875016,
+        "raw_correction": 0.4423853077412567,
+        "supervised_training_targets": 314,
+        "trained": true,
+        "sigma_events": 7,
+        "sigma_horizon_fallback": false,
+        "sigma_outside_duration_support": true,
+        "sigma_outside_horizon_support": false
+      }
+    }
+  ],
+  "limitations": [
+    "Single held-out validation: event 325 scored 4.50% (external 24 fresh-input points) and 7.55% (standing 164 focal-tier rows) MAPE; descriptive, not an independent fresh test",
+    "Events 325/326 are excluded from fitting (fit_cutoff = start of event 325)",
+    "Hyperparameters (hidden 8, seed 1729, 240 epochs, gain 1.0) are inherited from the frozen sweep recipe and were not re-selected for this exact 30-event scope",
+    "Supervised labels include closing-tracker proxies; RMS-like errors contain systematic bias and carry no coverage guarantee",
+    "Reference/analog pool stops at event 324; forecasts for events inside that pool are rejected",
+    "Eight actual post-rule events (311, 314-320); each held event is removed from fold training and all references",
+    "LOO can train on later pre-321 events: event transfer estimate, not a chronological backtest",
+    "Model-family design used earlier inspected experiments; this is approximate calibration, not an independent coverage test",
+    "Events 321-326 excluded from residual calibration; 321-324 remain in the production network fit",
+    "RMS includes systematic bias; no normality or 68% coverage guarantee; proxy closing labels are not official finals",
+    "Same-tier neighboring horizon bins are pooled until four event clusters; no cross-tier borrowing",
+    "No sigma for unlabeled tiers or observations older than one hour; no event-type-specific or outage calibration",
+    "Production has more post-rule training events; sigma is not automatically reduced",
+    "Eight events provide weak support for very long events; extrapolation is explicitly flagged",
+    "Residual checkpoints are 08:00/20:00/21:00 CN; other issue times use the same hours-remaining buckets",
+    "Routing rule provenance: Explicit user instruction after inspecting event 325; not a test-independent routing rule",
+    "Event duration exceeds the longest training event of the selected model"
+  ]
+}

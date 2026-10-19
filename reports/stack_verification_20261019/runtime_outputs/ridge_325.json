@@ -1,0 +1,514 @@
+{
+  "api_version": 1,
+  "model": {
+    "name": "ridge",
+    "kind": "bandori_cn_ridge_deployment_v1",
+    "selection": "manual",
+    "reason": "manual override --model ridge; auto rule would select ridge"
+  },
+  "event_id": 325,
+  "event_name": "All☆Stars CiRCRiNG Fes!",
+  "event_type": "challenge",
+  "checkpoint_cn": "2026-10-14T20:00:00+08:00",
+  "closes_cn": "2026-10-14T22:59:59+08:00",
+  "hours_remaining": 2.999722222222222,
+  "total_duration_hours": 372.9997222222222,
+  "routing": {
+    "rule": "total scheduled duration > 240 hours -> ridge; otherwise fresh",
+    "threshold": 240.0,
+    "selected": "ridge"
+  },
+  "predictions": [
+    {
+      "tier": 1,
+      "status": "ok",
+      "final": 260000000,
+      "current": 260000000,
+      "observed_at": "2026-10-14T11:50:47+00:00",
+      "score_age_hours": 0.15361055552959443,
+      "sigma": {
+        "value": 12226954.078908324,
+        "relative": 0.04702674645733971,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 260000000.0,
+        "remaining_multiplier": 1.113611644522566,
+        "raw_correction": 0.22722328904513184,
+        "trained": true,
+        "supervised_training_targets": 1359,
+        "sigma_borrowed_from_tier": 20
+      }
+    },
+    {
+      "tier": 10,
+      "status": "ok",
+      "final": 116258732,
+      "current": 116258732,
+      "observed_at": "2026-10-14T11:50:47+00:00",
+      "score_age_hours": 0.15361055552959443,
+      "sigma": {
+        "value": 5467269.913215807,
+        "relative": 0.04702674645733971,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 116258732.0,
+        "remaining_multiplier": 1.1988500694950055,
+        "raw_correction": 0.3977001389900111,
+        "trained": true,
+        "supervised_training_targets": 1359,
+        "sigma_borrowed_from_tier": 20
+      }
+    },
+    {
+      "tier": 20,
+      "status": "ok",
+      "final": 63591459,
+      "current": 63428016,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 2990499.4192453134,
+        "relative": 0.04702674645733971,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 63536977.61813827,
+        "remaining_multiplier": 1.5,
+        "raw_correction": 1.0,
+        "trained": true,
+        "supervised_training_targets": 2194
+      }
+    },
+    {
+      "tier": 30,
+      "status": "ok",
+      "final": 48680383,
+      "current": 47712576,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 2693059.275496211,
+        "relative": 0.05532124255259477,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 48392972.26927343,
+        "remaining_multiplier": 1.4224160923969411,
+        "raw_correction": 0.8448321847938821,
+        "trained": true,
+        "supervised_training_targets": 2198
+      }
+    },
+    {
+      "tier": 40,
+      "status": "ok",
+      "final": 43822885,
+      "current": 42834894,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 1481797.494971538,
+        "relative": 0.033813325959063126,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 43584201.92829125,
+        "remaining_multiplier": 1.3185377772426952,
+        "raw_correction": 0.6370755544853902,
+        "trained": true,
+        "supervised_training_targets": 2203
+      }
+    },
+    {
+      "tier": 50,
+      "status": "ok",
+      "final": 35976852,
+      "current": 34844747,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 1756822.5422515338,
+        "relative": 0.04883202516583535,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 35761702.78474008,
+        "remaining_multiplier": 1.2346337730344221,
+        "raw_correction": 0.4692675460688443,
+        "trained": true,
+        "supervised_training_targets": 3156
+      }
+    },
+    {
+      "tier": 100,
+      "status": "ok",
+      "final": 23357288,
+      "current": 22023139,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 835616.3033024956,
+        "relative": 0.03577539923738131,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 23113434.157591984,
+        "remaining_multiplier": 1.2236583607939844,
+        "raw_correction": 0.44731672158796876,
+        "trained": true,
+        "supervised_training_targets": 3419
+      }
+    },
+    {
+      "tier": 200,
+      "status": "ok",
+      "final": 16415331,
+      "current": 15596314,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 486368.64027399616,
+        "relative": 0.029628926780337,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 16262057.4188423,
+        "remaining_multiplier": 1.2302279890521461,
+        "raw_correction": 0.46045597810429245,
+        "trained": true,
+        "supervised_training_targets": 2206
+      }
+    },
+    {
+      "tier": 300,
+      "status": "ok",
+      "final": 14202165,
+      "current": 13505936,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 288308.83531581674,
+        "relative": 0.020300344019085592,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 14029186.18086625,
+        "remaining_multiplier": 1.3305851083494638,
+        "raw_correction": 0.6611702166989277,
+        "trained": true,
+        "supervised_training_targets": 2789
+      }
+    },
+    {
+      "tier": 400,
+      "status": "ok",
+      "final": 13117670,
+      "current": 12347113,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 452899.9232698326,
+        "relative": 0.03452594273753133,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 12880092.129689515,
+        "remaining_multiplier": 1.4457533003706184,
+        "raw_correction": 0.8915066007412369,
+        "trained": true,
+        "supervised_training_targets": 2208
+      }
+    },
+    {
+      "tier": 500,
+      "status": "ok",
+      "final": 12226083,
+      "current": 11255278,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 790782.8245228569,
+        "relative": 0.06467998168529175,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 11927915.081446307,
+        "remaining_multiplier": 1.4432807725639476,
+        "raw_correction": 0.8865615451278953,
+        "trained": true,
+        "supervised_training_targets": 2733
+      }
+    },
+    {
+      "tier": 1000,
+      "status": "ok",
+      "final": 9412293,
+      "current": 8844171,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 628220.8285657882,
+        "relative": 0.06674471657074299,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 9471874.046553712,
+        "remaining_multiplier": 0.9050799094083788,
+        "raw_correction": -0.18984018118324242,
+        "trained": true,
+        "supervised_training_targets": 3069
+      }
+    },
+    {
+      "tier": 1500,
+      "status": "ok",
+      "final": 8466880,
+      "current": 7498122,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 321547.0229338854,
+        "relative": 0.03797703793296768,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 8334912.389793912,
+        "remaining_multiplier": 1.1577063193397354,
+        "raw_correction": 0.3154126386794707,
+        "trained": true,
+        "supervised_training_targets": 284
+      }
+    },
+    {
+      "tier": 2000,
+      "status": "ok",
+      "final": 6939788,
+      "current": 6253537,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 231118.2325716727,
+        "relative": 0.033303356323229574,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 6721071.832872207,
+        "remaining_multiplier": 1.4678069286429452,
+        "raw_correction": 0.9356138572858903,
+        "trained": true,
+        "supervised_training_targets": 2883
+      }
+    },
+    {
+      "tier": 3000,
+      "status": "ok",
+      "final": 4596354,
+      "current": 4392042,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 178831.80285820083,
+        "relative": 0.03890731716012318,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 4528249.565249257,
+        "remaining_multiplier": 1.5,
+        "raw_correction": 1.0,
+        "trained": true,
+        "supervised_training_targets": 2206
+      }
+    },
+    {
+      "tier": 4000,
+      "status": "ok",
+      "final": 3442874,
+      "current": 3309527,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 153451.19762479723,
+        "relative": 0.04457066904708021,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 3398424.344786305,
+        "remaining_multiplier": 1.5,
+        "raw_correction": 1.0,
+        "trained": true,
+        "supervised_training_targets": 2206
+      }
+    },
+    {
+      "tier": 5000,
+      "status": "ok",
+      "final": 2857271,
+      "current": 2702812,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 140811.2612832803,
+        "relative": 0.04928173116350542,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 2805784.5801243256,
+        "remaining_multiplier": 1.5,
+        "raw_correction": 1.0,
+        "trained": true,
+        "supervised_training_targets": 2231
+      }
+    },
+    {
+      "tier": 10000,
+      "status": "ok",
+      "final": 1364030,
+      "current": 1305963,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 43512.28311098812,
+        "relative": 0.031899799206020485,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 1345946.7328523595,
+        "remaining_multiplier": 1.4522556957600155,
+        "raw_correction": 0.9045113915200307,
+        "trained": true,
+        "supervised_training_targets": 2205
+      }
+    },
+    {
+      "tier": 20000,
+      "status": "ok",
+      "final": 595607,
+      "current": 579924,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 11328.07951540004,
+        "relative": 0.019019386131123445,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 592206.1929716023,
+        "remaining_multiplier": 1.276859291217907,
+        "raw_correction": 0.5537185824358141,
+        "trained": true,
+        "supervised_training_targets": 2188
+      }
+    },
+    {
+      "tier": 30000,
+      "status": "ok",
+      "final": 321921,
+      "current": 315046,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 4379.82858134704,
+        "relative": 0.013605290059819149,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 320652.6384843342,
+        "remaining_multiplier": 1.2261477956669773,
+        "raw_correction": 0.4522955913339547,
+        "trained": true,
+        "supervised_training_targets": 2108
+      }
+    },
+    {
+      "tier": 40000,
+      "status": "ok",
+      "final": 185240,
+      "current": 181537,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 54745.09995968717,
+        "relative": 0.29553606110822267,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 184800.2695370466,
+        "remaining_multiplier": 1.1345766402010016,
+        "raw_correction": 0.26915328040200315,
+        "trained": true,
+        "supervised_training_targets": 2001
+      }
+    },
+    {
+      "tier": 50000,
+      "status": "ok",
+      "final": 109805,
+      "current": 107670,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 1193.647968731614,
+        "relative": 0.010870615807400518,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 109644.19296146845,
+        "remaining_multiplier": 1.0812995903147917,
+        "raw_correction": 0.16259918062958367,
+        "trained": true,
+        "supervised_training_targets": 1877
+      }
+    },
+    {
+      "tier": 70000,
+      "status": "ok",
+      "final": 31631,
+      "current": 30910,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 880.124041866665,
+        "relative": 0.02782473022878395,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 31543.36097314439,
+        "remaining_multiplier": 1.1373303556528114,
+        "raw_correction": 0.2746607113056229,
+        "trained": true,
+        "supervised_training_targets": 1594
+      }
+    },
+    {
+      "tier": 100000,
+      "status": "ok",
+      "final": 7126,
+      "current": 6911,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 684.5424086015299,
+        "relative": 0.09606264504652398,
+        "method": "ridge_out_of_fold_rms"
+      },
+      "detail": {
+        "baseline": 7077.5865726051425,
+        "remaining_multiplier": 1.2901180172564226,
+        "raw_correction": 0.5802360345128453,
+        "trained": true,
+        "supervised_training_targets": 1073
+      }
+    }
+  ],
+  "limitations": [
+    "Trained on 319 events through 324; events 325/326 are excluded from fitting",
+    "Held-out 325: 4.31% external-24 / 8.79% standing-164 MAPE — descriptive, previously inspected holdout, not a fresh independent test",
+    "Strength was selected on 317-320 only; the model design reused earlier experiments, so historical checks are not fully independent of design iteration",
+    "Sigma comes from 12 post-rule events with closing-tracker proxy labels: systematic bias, no 68% coverage guarantee, not specially calibrated for extra-long events; T1/T10 explicitly borrow T20",
+    "No clock_v2 variant is shipped; the frozen daily_v1 feature layout is the deployment",
+    "Routing rule provenance: Explicit user instruction after inspecting event 325; not a test-independent routing rule",
+    "Event duration exceeds the longest training event of the selected model"
+  ]
+}

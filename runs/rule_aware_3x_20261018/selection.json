@@ -1,0 +1,168 @@
+{
+  "champion": "ridge",
+  "scores": {
+    "baseline": {
+      "score": 0.1648101361462702,
+      "admissible": true,
+      "fold_scores": [
+        0.17672967862777303,
+        0.16750337854608668,
+        0.13770861721871483
+      ]
+    },
+    "nn_minimal": {
+      "score": 0.15078544047133566,
+      "admissible": true,
+      "fold_scores": [
+        0.16731776622814423,
+        0.1454665539774568,
+        0.1273025749044146
+      ]
+    },
+    "nn_standard": {
+      "score": 0.1539638824399957,
+      "admissible": true,
+      "fold_scores": [
+        0.1712452379630166,
+        0.148817975028488,
+        0.12883616731133038
+      ]
+    },
+    "nn_rich": {
+      "score": 0.1580848721222107,
+      "admissible": false,
+      "fold_scores": [
+        0.1739245556424069,
+        0.14744910378280202,
+        0.14254358947027382
+      ]
+    },
+    "nn_pca": {
+      "score": 0.14669779749104503,
+      "admissible": false,
+      "fold_scores": [
+        0.16705276787733475,
+        0.1291344677885809,
+        0.13078147374347107
+      ]
+    },
+    "bagged": {
+      "score": 0.15305582397261736,
+      "admissible": false,
+      "fold_scores": [
+        0.17288739728454178,
+        0.1390446258824925,
+        0.13436244397574665
+      ]
+    },
+    "ridge": {
+      "score": 0.12730315335418252,
+      "admissible": true,
+      "fold_scores": [
+        0.143168937484335,
+        0.11599262037374224,
+        0.11245763941977001
+      ]
+    },
+    "hierarchical": {
+      "score": 0.1294576716827837,
+      "admissible": false,
+      "fold_scores": [
+        0.13555780109029963,
+        0.12266058137551429,
+        0.12606129368330968
+      ]
+    },
+    "daily_baseline": {
+      "score": 0.13768607375529435,
+      "admissible": false,
+      "fold_scores": [
+        0.13805856218765264,
+        0.13767435120759294,
+        0.136995756628864
+      ]
+    },
+    "calibrated_stat": {
+      "score": 0.13583262447017533,
+      "admissible": false,
+      "fold_scores": [
+        0.14333797214076455,
+        0.1280336114713357,
+        0.13117652918544456
+      ]
+    },
+    "trajectory": {
+      "score": 0.1392471629174234,
+      "admissible": false,
+      "fold_scores": [
+        0.14092807939363533,
+        0.12866139545688357,
+        0.14333329285798752
+      ]
+    },
+    "tcn24": {
+      "score": 0.15103476918934808,
+      "admissible": true,
+      "fold_scores": [
+        0.16908723275322607,
+        0.14511984516263557,
+        0.12554160003671294
+      ]
+    },
+    "raw_lstm": {
+      "score": 0.139099151605172,
+      "admissible": false,
+      "fold_scores": [
+        0.14851699633776602,
+        0.1297485825531564,
+        0.13287391890274797
+      ]
+    },
+    "neural_mean": {
+      "score": 0.14385102484246545,
+      "admissible": true,
+      "fold_scores": [
+        0.16147177247595088,
+        0.13513785988097043,
+        0.12286373343142987
+      ]
+    },
+    "statistical_mean": {
+      "score": 0.12756675698066844,
+      "admissible": false,
+      "fold_scores": [
+        0.13573344892684067,
+        0.11768692078112047,
+        0.12364932932533754
+      ]
+    },
+    "collection_mean": {
+      "score": 0.12713563326876307,
+      "admissible": false,
+      "fold_scores": [
+        0.13772498487481566,
+        0.12190532831803376,
+        0.11451563307658365
+      ]
+    },
+    "collection_median": {
+      "score": 0.13031923345722388,
+      "admissible": false,
+      "fold_scores": [
+        0.14134993978914825,
+        0.12329648728792839,
+        0.11906323591344554
+      ]
+    },
+    "collection_trimmed": {
+      "score": 0.12802786969756988,
+      "admissible": false,
+      "fold_scores": [
+        0.13862159976886665,
+        0.12180392692489708,
+        0.11661284021892193
+      ]
+    }
+  },
+  "rule": "Three equal chronological fold scores (MAPE + absolute bias by tier/horizon) plus 0.25*fold-score std; paired baseline bias and final-day guards"
+}

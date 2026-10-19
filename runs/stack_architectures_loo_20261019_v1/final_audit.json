@@ -1,0 +1,29 @@
+{
+  "protocol_sha256": "236d92f0e545be8145c48c120e3678c66ab8e3206984b095027fdbbc3b0f7a6f",
+  "initial_protocol_sha256": "4a622f080aec4d8b9cafa64c3aa2ee7643221ed9012dc77871295b4313d59978",
+  "selection_sha256": "4b8689faec509c52802bdc352f05319930b450556afaaa518bcf4947bb76f210",
+  "assessment_sha256": "9687370f3c51c4ada7fadcb9320c27a9778559892127aefc4ac568dc30198a52",
+  "total_candidate_fold_evaluations": 240,
+  "total_seed_fits": 480,
+  "test_rows_per_model": 312,
+  "rebuilt_later_events_per_fold": [
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1,
+    0
+  ],
+  "checks": {
+    "selection_recomputed_from_loo_only": true,
+    "selection_sealed_before_test": true,
+    "held_metadata_curves_and_labels_excluded_from_training": true,
+    "all_folds_29_supervised_and_314_reference_events": true,
+    "overall_test_metrics_recomputed_from_csv": true,
+    "protected_ledger_and_sources_unchanged": true,
+    "original_protocol_and_diagnostic_amendment_preserved": true
+  },
+  "new_unit_tests_passed": 4
+}

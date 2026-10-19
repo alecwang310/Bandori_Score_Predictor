@@ -1,0 +1,94 @@
+{
+ "model": "stack recipe (rule+explicit 600, JointNet h8 seed1729, gain 1.0)",
+ "scope": "30 events: post-rule 311-324 + 18 most recent older",
+ "supervised_events": [
+  292,
+  293,
+  294,
+  295,
+  296,
+  297,
+  298,
+  299,
+  300,
+  301,
+  302,
+  303,
+  304,
+  305,
+  306,
+  307,
+  308,
+  309,
+  311,
+  312,
+  313,
+  314,
+  315,
+  316,
+  317,
+  318,
+  319,
+  320,
+  321,
+  322,
+  323,
+  324
+ ],
+ "fit_cutoff": 1790647200.0,
+ "weighted_cells": 16154,
+ "sets": {
+  "external_24pts": {
+   "stack_postrule30": {
+    "rows": 24,
+    "mape": 0.04528717711292533,
+    "bias": 0.01520833794303853
+   },
+   "ridge_full_refit": {
+    "rows": 24,
+    "mape": 0.04307469034481867,
+    "bias": -0.015011699089342495
+   },
+   "baseline": {
+    "rows": 24,
+    "mape": 0.08647832457257432,
+    "bias": -0.0694754040514202
+   }
+  },
+  "standing_164rows": {
+   "stack_postrule30": {
+    "rows": 164,
+    "mape": 0.07735963968495363,
+    "bias": -0.03065799331369114
+   },
+   "ridge_full_refit": {
+    "rows": 164,
+    "mape": 0.08790822825824854,
+    "bias": -0.06304930140667965
+   },
+   "baseline": {
+    "rows": 164,
+    "mape": 0.14728575238472524,
+    "bias": -0.13448135112161244
+   }
+  }
+ },
+ "known_comparison": {
+  "stack_post20(311-320+20)": {
+   "external_24pts": 0.0435,
+   "standing_164rows": 0.0748
+  },
+  "stack_all_pre325(319)": {
+   "external_24pts": 0.0614,
+   "standing_164rows": 0.0885
+  },
+  "ridge_full_refit": {
+   "external_24pts": 0.0431,
+   "standing_164rows": 0.0879
+  },
+  "baseline": {
+   "external_24pts": 0.0865,
+   "standing_164rows": 0.1473
+  }
+ }
+}

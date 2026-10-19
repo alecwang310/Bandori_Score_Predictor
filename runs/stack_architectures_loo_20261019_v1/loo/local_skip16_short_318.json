@@ -1,0 +1,93 @@
+{
+  "candidate": "local_skip16_short",
+  "held": 318,
+  "params": 10120,
+  "metrics": {
+    "overall": {
+      "rows": 104,
+      "events": 1,
+      "mape": 0.06919409593219518,
+      "bias": -0.014229032012828786
+    },
+    "last24h": {
+      "rows": 0,
+      "events": 0,
+      "mape": null,
+      "bias": null
+    },
+    "morning": {
+      "rows": 32,
+      "events": 1,
+      "mape": 0.07029276852211089,
+      "bias": -0.02344059642363121
+    },
+    "by_event": {
+      "318": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.06919409593219518,
+        "bias": -0.014229032012828786
+      }
+    }
+  },
+  "seed_metrics": [
+    {
+      "overall": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.06892534711484674,
+        "bias": -0.013152088927884978
+      },
+      "last24h": {
+        "rows": 0,
+        "events": 0,
+        "mape": null,
+        "bias": null
+      },
+      "morning": {
+        "rows": 32,
+        "events": 1,
+        "mape": 0.06983681699458674,
+        "bias": -0.02243592449519297
+      },
+      "by_event": {
+        "318": {
+          "rows": 104,
+          "events": 1,
+          "mape": 0.06892534711484674,
+          "bias": -0.013152088927884978
+        }
+      }
+    },
+    {
+      "overall": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.06953747144165143,
+        "bias": -0.015305975097772598
+      },
+      "last24h": {
+        "rows": 0,
+        "events": 0,
+        "mape": null,
+        "bias": null
+      },
+      "morning": {
+        "rows": 32,
+        "events": 1,
+        "mape": 0.07074872004963506,
+        "bias": -0.02444526835206947
+      },
+      "by_event": {
+        "318": {
+          "rows": 104,
+          "events": 1,
+          "mape": 0.06953747144165143,
+          "bias": -0.015305975097772598
+        }
+      }
+    }
+  ],
+  "seconds": 0.26719204196706414,
+  "protocol_sha256": "4a622f080aec4d8b9cafa64c3aa2ee7643221ed9012dc77871295b4313d59978"
+}

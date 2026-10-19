@@ -1,0 +1,572 @@
+{
+  "api_version": 1,
+  "model": {
+    "name": "fresh",
+    "kind": "fresh_post_rule_joint_v1",
+    "selection": "manual",
+    "reason": "manual override --model fresh; auto rule would select ridge"
+  },
+  "event_id": 325,
+  "event_name": "All☆Stars CiRCRiNG Fes!",
+  "event_type": "challenge",
+  "checkpoint_cn": "2026-10-14T20:00:00+08:00",
+  "closes_cn": "2026-10-14T22:59:59+08:00",
+  "hours_remaining": 2.999722222222222,
+  "total_duration_hours": 372.9997222222222,
+  "routing": {
+    "rule": "total scheduled duration > 240 hours -> ridge; otherwise fresh",
+    "threshold": 240.0,
+    "selected": "fresh"
+  },
+  "predictions": [
+    {
+      "tier": 1,
+      "status": "ok",
+      "final": 260000000,
+      "current": 260000000,
+      "observed_at": "2026-10-14T11:50:47+00:00",
+      "score_age_hours": 0.15361055552959443,
+      "sigma": null,
+      "detail": {
+        "anchor": 260000000,
+        "pace": 260070260,
+        "anchor_method": "historical_completion",
+        "trained": false,
+        "reference_events": 84,
+        "role_transfer_references": 0
+      }
+    },
+    {
+      "tier": 10,
+      "status": "ok",
+      "final": 116258732,
+      "current": 116258732,
+      "observed_at": "2026-10-14T11:50:47+00:00",
+      "score_age_hours": 0.15361055552959443,
+      "sigma": null,
+      "detail": {
+        "anchor": 116258732,
+        "pace": 116520547,
+        "anchor_method": "historical_completion",
+        "trained": false,
+        "reference_events": 84,
+        "role_transfer_references": 0
+      }
+    },
+    {
+      "tier": 20,
+      "status": "ok",
+      "final": 63673280,
+      "current": 63428016,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 647425.705139989,
+        "relative": 0.010167934077164164,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 63536978,
+        "pace": 64701091,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 90,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 30,
+      "status": "ok",
+      "final": 48855112,
+      "current": 47712576,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 3381582.846238104,
+        "relative": 0.06921656253403695,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 48392973,
+        "pace": 48595392,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 88,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 40,
+      "status": "ok",
+      "final": 44647682,
+      "current": 42834894,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 1437864.0504314615,
+        "relative": 0.03220467459692728,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 43584202,
+        "pace": 45357132,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 90,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 50,
+      "status": "ok",
+      "final": 36441551,
+      "current": 34844747,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 2422283.8188924855,
+        "relative": 0.06647038338505452,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 35761703,
+        "pace": 36475526,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 202,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 100,
+      "status": "ok",
+      "final": 23896066,
+      "current": 22023139,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 686700.7973062278,
+        "relative": 0.028736981997875843,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 23113435,
+        "pace": 23804029,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 296,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 200,
+      "status": "ok",
+      "final": 16753144,
+      "current": 15596314,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 340328.24980456854,
+        "relative": 0.020314292509315057,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 16262058,
+        "pace": 16807937,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 93,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 300,
+      "status": "ok",
+      "final": 14374676,
+      "current": 13505936,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 302099.65778817545,
+        "relative": 0.021016102488898427,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 14029187,
+        "pace": 14297728,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 185,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 400,
+      "status": "ok",
+      "final": 13214646,
+      "current": 12347113,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 421627.8195827584,
+        "relative": 0.03190610066027296,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 12880093,
+        "pace": 13100150,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 94,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 500,
+      "status": "ok",
+      "final": 12285728,
+      "current": 11255278,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 789737.6753954145,
+        "relative": 0.06428090694667953,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 11927916,
+        "pace": 12030312,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 170,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 1000,
+      "status": "ok",
+      "final": 9814462,
+      "current": 8844171,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 372117.5083631387,
+        "relative": 0.03791522563796267,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 9471875,
+        "pace": 9597936,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 247,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 1500,
+      "status": "ok",
+      "final": 8724056,
+      "current": 7498122,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 375798.73986831424,
+        "relative": 0.04307615090962547,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 8307365,
+        "pace": 8395896,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 247,
+        "role_transfer_references": 236,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 2000,
+      "status": "ok",
+      "final": 7033535,
+      "current": 6253537,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 394353.5971877323,
+        "relative": 0.056067624647069984,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 6721072,
+        "pace": 6936481,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 239,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 3000,
+      "status": "ok",
+      "final": 4657812,
+      "current": 4392042,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 304072.44392640685,
+        "relative": 0.06528225600510174,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 4528250,
+        "pace": 4674533,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 94,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 4000,
+      "status": "ok",
+      "final": 3484295,
+      "current": 3309527,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 221783.6313328837,
+        "relative": 0.06365237590942678,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 3398425,
+        "pace": 3494857,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 94,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 5000,
+      "status": "ok",
+      "final": 2899376,
+      "current": 2702812,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 216685.5230019513,
+        "relative": 0.07473523798239419,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 2805785,
+        "pace": 2904984,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 97,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 10000,
+      "status": "ok",
+      "final": 1372139,
+      "current": 1305963,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 54064.028371844535,
+        "relative": 0.03940129853830447,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 1345947,
+        "pace": 1363003,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 94,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 20000,
+      "status": "ok",
+      "final": 598527,
+      "current": 579924,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 14652.847580588887,
+        "relative": 0.024481523891105653,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 592207,
+        "pace": 593163,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 94,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 30000,
+      "status": "ok",
+      "final": 323258,
+      "current": 315046,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 3716.07271630698,
+        "relative": 0.01149571274038043,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 320653,
+        "pace": 320233,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 94,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 40000,
+      "status": "ok",
+      "final": 186354,
+      "current": 181537,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 2043.8183818854152,
+        "relative": 0.010967450859377186,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 184801,
+        "pace": 184552,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 94,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 50000,
+      "status": "ok",
+      "final": 110341,
+      "current": 107670,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 580.8927371066886,
+        "relative": 0.0052645529398278506,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 109645,
+        "pace": 109014,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 90,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 70000,
+      "status": "ok",
+      "final": 31755,
+      "current": 30910,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 538.2363311723036,
+        "relative": 0.016949721356519735,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 31544,
+        "pace": 31422,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 86,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    },
+    {
+      "tier": 100000,
+      "status": "ok",
+      "final": 7128,
+      "current": 6911,
+      "observed_at": "2026-10-14T11:45:01+00:00",
+      "score_age_hours": 0.24972222222222223,
+      "sigma": {
+        "value": 1009.1672464284011,
+        "relative": 0.14158165469324363,
+        "method": "fresh_chronological_rms"
+      },
+      "detail": {
+        "anchor": 7078,
+        "pace": 7032,
+        "anchor_method": "historical_completion",
+        "trained": true,
+        "reference_events": 75,
+        "role_transfer_references": 0,
+        "sigma_scope": "same_tier_horizon",
+        "sigma_events": 3
+      }
+    }
+  ],
+  "limitations": [
+    "Fits only 12 strictly-post-rule events (311, 314-324); rejects events that started before the 2026-05-26 rule change",
+    "Events 325/326 are excluded from fitting (fit_cutoff = start of event 325)",
+    "Held-out 325: 7.99% external-24 / 10.63% standing-164 MAPE — a single inspected holdout, not a fresh independent test",
+    "T1/T10 have no supervised labels; their forecasts fall back to priors",
+    "Sigma uses at most four 317-320 events per tier: small proxy-label sample, contains systematic bias, no independent coverage or normality guarantee",
+    "Reference/analog pool stops at event 324",
+    "Routing rule provenance: Explicit user instruction after inspecting event 325; not a test-independent routing rule"
+  ]
+}

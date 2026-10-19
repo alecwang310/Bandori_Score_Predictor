@@ -1,0 +1,93 @@
+{
+  "candidate": "tier_shared8_short",
+  "held": 318,
+  "params": 448,
+  "metrics": {
+    "overall": {
+      "rows": 104,
+      "events": 1,
+      "mape": 0.07527849338947325,
+      "bias": -0.017929219432702263
+    },
+    "last24h": {
+      "rows": 0,
+      "events": 0,
+      "mape": null,
+      "bias": null
+    },
+    "morning": {
+      "rows": 32,
+      "events": 1,
+      "mape": 0.07638765176413909,
+      "bias": -0.028679560218316625
+    },
+    "by_event": {
+      "318": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.07527849338947325,
+        "bias": -0.017929219432702263
+      }
+    }
+  },
+  "seed_metrics": [
+    {
+      "overall": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.07524942372125203,
+        "bias": -0.018114667580452288
+      },
+      "last24h": {
+        "rows": 0,
+        "events": 0,
+        "mape": null,
+        "bias": null
+      },
+      "morning": {
+        "rows": 32,
+        "events": 1,
+        "mape": 0.07642420100315063,
+        "bias": -0.02884496615124181
+      },
+      "by_event": {
+        "318": {
+          "rows": 104,
+          "events": 1,
+          "mape": 0.07524942372125203,
+          "bias": -0.018114667580452288
+        }
+      }
+    },
+    {
+      "overall": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.07530756305769447,
+        "bias": -0.017743771284952237
+      },
+      "last24h": {
+        "rows": 0,
+        "events": 0,
+        "mape": null,
+        "bias": null
+      },
+      "morning": {
+        "rows": 32,
+        "events": 1,
+        "mape": 0.07635110252512747,
+        "bias": -0.028514154285391422
+      },
+      "by_event": {
+        "318": {
+          "rows": 104,
+          "events": 1,
+          "mape": 0.07530756305769447,
+          "bias": -0.017743771284952237
+        }
+      }
+    }
+  ],
+  "seconds": 0.8564908751286566,
+  "protocol_sha256": "4a622f080aec4d8b9cafa64c3aa2ee7643221ed9012dc77871295b4313d59978"
+}

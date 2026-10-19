@@ -1,0 +1,2 @@
+# Preserve exact experiment and package bytes across checkout.
+* -text -eol

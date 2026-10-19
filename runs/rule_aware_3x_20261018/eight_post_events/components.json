@@ -1,0 +1,2373 @@
+{
+  "baseline": {
+    "kind": "baseline"
+  },
+  "nn_minimal": {
+    "kind": "nn",
+    "representation": "minimal",
+    "cores": [
+      "rule_nn_minimal_h8"
+    ],
+    "gain": 0.5
+  },
+  "nn_standard": {
+    "kind": "nn",
+    "representation": "standard",
+    "cores": [
+      "rule_nn_standard_h8"
+    ],
+    "gain": 0.5
+  },
+  "nn_rich": {
+    "kind": "nn",
+    "representation": "rich",
+    "cores": [
+      "rule_nn_rich_h8"
+    ],
+    "gain": 1.0
+  },
+  "nn_pca": {
+    "kind": "nn",
+    "representation": "pca",
+    "cores": [
+      "rule_nn_pca_h8"
+    ],
+    "gain": 1.0
+  },
+  "bagged": {
+    "kind": "nn",
+    "representation": "standard",
+    "cores": [
+      "rule_bag_standard_s1729",
+      "rule_bag_standard_s1730",
+      "rule_bag_standard_s1731"
+    ],
+    "gain": 1.0
+  },
+  "ridge": {
+    "kind": "ridge",
+    "core": "ridge",
+    "representation": "pca",
+    "gain": 0.5
+  },
+  "hierarchical": {
+    "kind": "hierarchical",
+    "core": "hierarchical",
+    "gain": 1.0
+  },
+  "daily_baseline": {
+    "kind": "statistical",
+    "factors": {},
+    "base": {
+      "family_winners": {
+        "nn_minimal": "nn_minimal_h8_g0.5",
+        "nn_standard": "nn_standard_h8_g0.5",
+        "nn_rich": "nn_rich_h8_g1",
+        "nn_pca": "nn_pca_h8_g0.5",
+        "bagged": "bagged_g1",
+        "ridge": "ridge_pca_a0.01_g0.5",
+        "calibrated_stat": "calibrated_stat_a0.5",
+        "trajectory": "trajectory_b0.1",
+        "hierarchical": "hierarchical_a0.01_g1"
+      },
+      "components": {
+        "baseline": {
+          "kind": "baseline"
+        },
+        "nn_minimal": {
+          "kind": "nn",
+          "representation": "minimal",
+          "cores": [
+            "nn_minimal_h8"
+          ],
+          "gain": 0.5
+        },
+        "nn_standard": {
+          "kind": "nn",
+          "representation": "standard",
+          "cores": [
+            "nn_standard_h8"
+          ],
+          "gain": 0.5
+        },
+        "nn_rich": {
+          "kind": "nn",
+          "representation": "rich",
+          "cores": [
+            "nn_rich_h8"
+          ],
+          "gain": 1.0
+        },
+        "nn_pca": {
+          "kind": "nn",
+          "representation": "pca",
+          "cores": [
+            "nn_pca_h8"
+          ],
+          "gain": 0.5
+        },
+        "bagged": {
+          "kind": "bagged",
+          "representation": "standard",
+          "cores": [
+            "bag_standard_s1729",
+            "bag_standard_s1730",
+            "bag_standard_s1731"
+          ],
+          "gain": 1.0
+        },
+        "ridge": {
+          "kind": "ridge",
+          "representation": "pca",
+          "cores": [
+            "ridge_pca_a0.01"
+          ],
+          "gain": 0.5
+        },
+        "calibrated_stat": {
+          "kind": "statistical",
+          "alpha": 0.5
+        },
+        "trajectory": {
+          "kind": "trajectory",
+          "bandwidth": 0.1
+        },
+        "hierarchical": {
+          "kind": "hierarchical",
+          "core": "hierarchical_a0.01",
+          "gain": 1.0
+        },
+        "neural_winner": {
+          "kind": "nn",
+          "representation": "rich",
+          "cores": [
+            "nn_rich_h8"
+          ],
+          "gain": 1.0
+        }
+      },
+      "ensembles": {
+        "neural_mean": {
+          "method": "mean",
+          "members": [
+            "nn_minimal",
+            "nn_standard",
+            "nn_rich",
+            "nn_pca",
+            "bagged"
+          ]
+        },
+        "statistical_mean": {
+          "method": "mean",
+          "members": [
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_mean": {
+          "method": "mean",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_median": {
+          "method": "median",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_trimmed": {
+          "method": "trimmed_mean",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        }
+      },
+      "champion": "calibrated_stat",
+      "rule": "Original model choices retained; all fitted weights and statistical correction factors refitted on authorized earlier events"
+    },
+    "observer": {
+      "components": {
+        "baseline": {
+          "kind": "daily_stat",
+          "family": "baseline",
+          "blend": 1.0,
+          "flat_clock": false,
+          "candidate_name": "baseline_daily_b1"
+        },
+        "nn_minimal": {
+          "kind": "control",
+          "family": "nn_minimal"
+        },
+        "nn_standard": {
+          "kind": "control",
+          "family": "nn_standard"
+        },
+        "nn_rich": {
+          "kind": "control",
+          "family": "nn_rich"
+        },
+        "nn_pca": {
+          "kind": "daily_nn",
+          "representation": "pca",
+          "cores": [
+            "daily_nn_pca_h8"
+          ],
+          "gain": 1.0,
+          "candidate_name": "nn_pca_daily_g1"
+        },
+        "bagged": {
+          "kind": "control",
+          "family": "bagged"
+        },
+        "ridge": {
+          "kind": "control",
+          "family": "ridge"
+        },
+        "calibrated_stat": {
+          "kind": "daily_stat",
+          "family": "calibrated_stat",
+          "blend": 0.5,
+          "flat_clock": false,
+          "candidate_name": "calibrated_stat_daily_b0.5"
+        },
+        "trajectory": {
+          "kind": "daily_stat",
+          "family": "trajectory",
+          "blend": 1.0,
+          "flat_clock": false,
+          "candidate_name": "trajectory_daily_b1"
+        },
+        "hierarchical": {
+          "kind": "daily_hierarchical",
+          "core": "daily_hierarchical_a0.01",
+          "gain": 1.0,
+          "candidate_name": "hierarchical_daily_g1"
+        },
+        "tcn24": {
+          "kind": "control",
+          "family": "neural_winner"
+        },
+        "pace24_flat": {
+          "kind": "daily_stat",
+          "family": "baseline",
+          "blend": 1.0,
+          "flat_clock": true,
+          "candidate_name": "pace24_flat_daily_b1"
+        },
+        "neural_winner": {
+          "kind": "control",
+          "family": "nn_rich"
+        }
+      },
+      "paired_raw": {
+        "baseline": {
+          "kind": "daily_stat",
+          "family": "baseline",
+          "blend": 0.5,
+          "flat_clock": false
+        },
+        "nn_minimal": {
+          "kind": "daily_nn",
+          "representation": "minimal",
+          "cores": [
+            "daily_nn_minimal_h8"
+          ],
+          "gain": 0.5
+        },
+        "nn_standard": {
+          "kind": "daily_nn",
+          "representation": "standard",
+          "cores": [
+            "daily_nn_standard_h8"
+          ],
+          "gain": 0.5
+        },
+        "nn_rich": {
+          "kind": "daily_nn",
+          "representation": "rich",
+          "cores": [
+            "daily_nn_rich_h8"
+          ],
+          "gain": 1.0
+        },
+        "nn_pca": {
+          "kind": "daily_nn",
+          "representation": "pca",
+          "cores": [
+            "daily_nn_pca_h8"
+          ],
+          "gain": 0.5
+        },
+        "bagged": {
+          "kind": "daily_nn",
+          "representation": "standard",
+          "cores": [
+            "daily_bag_standard_s1729",
+            "daily_bag_standard_s1730",
+            "daily_bag_standard_s1731"
+          ],
+          "gain": 1.0
+        },
+        "ridge": {
+          "kind": "daily_ridge",
+          "representation": "pca",
+          "cores": [
+            "daily_ridge_pca_a0.01"
+          ],
+          "gain": 0.5
+        },
+        "calibrated_stat": {
+          "kind": "daily_stat",
+          "family": "calibrated_stat",
+          "blend": 0.5,
+          "flat_clock": false
+        },
+        "trajectory": {
+          "kind": "daily_stat",
+          "family": "trajectory",
+          "blend": 0.5,
+          "flat_clock": false
+        },
+        "hierarchical": {
+          "kind": "daily_hierarchical",
+          "core": "daily_hierarchical_a0.01",
+          "gain": 1.0
+        },
+        "tcn24": {
+          "kind": "temporal",
+          "core": "tcn24_c4",
+          "gain": 0.5
+        },
+        "pace24_flat": {
+          "kind": "daily_stat",
+          "family": "baseline",
+          "blend": 0.5,
+          "flat_clock": true
+        }
+      },
+      "ensembles": {
+        "neural_mean": {
+          "method": "mean",
+          "members": [
+            "nn_minimal",
+            "nn_standard",
+            "nn_rich",
+            "nn_pca",
+            "bagged"
+          ]
+        },
+        "statistical_mean": {
+          "method": "mean",
+          "members": [
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_mean": {
+          "method": "mean",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_median": {
+          "method": "median",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_trimmed": {
+          "method": "trimmed_mean",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        }
+      },
+      "champion": "calibrated_stat",
+      "control_champion": "calibrated_stat",
+      "neural_winner": "nn_rich",
+      "rule": "Frozen before calibration and test observer features are generated"
+    }
+  },
+  "calibrated_stat": {
+    "kind": "statistical",
+    "factors": {
+      "2000:0": {
+        "factor": 1.08624541953267,
+        "events": 186,
+        "effective_events": 64.51549643092044
+      },
+      "1000:2": {
+        "factor": 1.0012588447720332,
+        "events": 175,
+        "effective_events": 58.23013046451289
+      },
+      "1000:0": {
+        "factor": 0.9727174698642629,
+        "events": 194,
+        "effective_events": 62.870157209985486
+      },
+      "1000:4": {
+        "factor": 0.9917154047039507,
+        "events": 211,
+        "effective_events": 65.62864707594264
+      },
+      "1000:3": {
+        "factor": 0.99368406469967,
+        "events": 181,
+        "effective_events": 59.67035175395169
+      },
+      "1000:1": {
+        "factor": 0.9917398148931568,
+        "events": 183,
+        "effective_events": 58.043159470395025
+      },
+      "2000:4": {
+        "factor": 1.0394273462315256,
+        "events": 194,
+        "effective_events": 64.41945664446928
+      },
+      "2000:2": {
+        "factor": 1.0844733156461601,
+        "events": 151,
+        "effective_events": 56.140685998070495
+      },
+      "100:1": {
+        "factor": 0.9221497429421834,
+        "events": 211,
+        "effective_events": 67.47042841777346
+      },
+      "100:3": {
+        "factor": 0.9373967843292557,
+        "events": 217,
+        "effective_events": 67.74616451194517
+      },
+      "100:2": {
+        "factor": 0.9286227016125677,
+        "events": 204,
+        "effective_events": 66.80554207038207
+      },
+      "2000:1": {
+        "factor": 1.1006900880508503,
+        "events": 152,
+        "effective_events": 55.95652092959334
+      },
+      "100:0": {
+        "factor": 0.9668690914725823,
+        "events": 235,
+        "effective_events": 76.73329551339101
+      },
+      "2000:3": {
+        "factor": 1.0694340771380322,
+        "events": 157,
+        "effective_events": 57.372210669354764
+      },
+      "100:4": {
+        "factor": 0.9137642097608389,
+        "events": 254,
+        "effective_events": 77.61285086525154
+      },
+      "1:2": {
+        "factor": 1.1088349923200445,
+        "events": 79,
+        "effective_events": 28.461547551472954
+      },
+      "10:2": {
+        "factor": 0.9667985589955401,
+        "events": 79,
+        "effective_events": 28.461547551472954
+      },
+      "1:1": {
+        "factor": 1.0735318344077152,
+        "events": 79,
+        "effective_events": 28.461547551472954
+      },
+      "10:1": {
+        "factor": 1.0605260042144884,
+        "events": 79,
+        "effective_events": 28.461547551472954
+      },
+      "1:0": {
+        "factor": 1.1865730052296068,
+        "events": 79,
+        "effective_events": 28.461547551472954
+      },
+      "10:0": {
+        "factor": 1.3612267019872664,
+        "events": 79,
+        "effective_events": 28.461547551472954
+      },
+      "1:4": {
+        "factor": 0.9762254970571507,
+        "events": 77,
+        "effective_events": 27.773046174801056
+      },
+      "10:4": {
+        "factor": 0.9076877526018468,
+        "events": 77,
+        "effective_events": 27.773046174801056
+      },
+      "1:3": {
+        "factor": 0.9978062348149433,
+        "events": 78,
+        "effective_events": 28.189328064868786
+      },
+      "10:3": {
+        "factor": 0.92108179474472,
+        "events": 78,
+        "effective_events": 28.189328064868786
+      },
+      "50:4": {
+        "factor": 0.9951034425056706,
+        "events": 197,
+        "effective_events": 72.66022090754237
+      },
+      "300:3": {
+        "factor": 1.0308894053016573,
+        "events": 145,
+        "effective_events": 59.48232369163226
+      },
+      "50:2": {
+        "factor": 0.95852810949491,
+        "events": 177,
+        "effective_events": 66.96578772402552
+      },
+      "300:2": {
+        "factor": 1.0241964250235973,
+        "events": 144,
+        "effective_events": 58.30169451317215
+      },
+      "300:0": {
+        "factor": 0.9402626044611738,
+        "events": 148,
+        "effective_events": 61.285827954149866
+      },
+      "50:0": {
+        "factor": 0.9684982518699893,
+        "events": 183,
+        "effective_events": 70.59629370218343
+      },
+      "300:4": {
+        "factor": 1.0551798155326888,
+        "events": 165,
+        "effective_events": 64.91883283179322
+      },
+      "500:2": {
+        "factor": 1.1346698035034906,
+        "events": 141,
+        "effective_events": 58.6008109960389
+      },
+      "500:0": {
+        "factor": 1.08887037699325,
+        "events": 142,
+        "effective_events": 61.01242473627239
+      },
+      "500:4": {
+        "factor": 1.112487397772083,
+        "events": 158,
+        "effective_events": 63.767684497875884
+      },
+      "50:3": {
+        "factor": 0.9808798079254912,
+        "events": 168,
+        "effective_events": 64.28146453447724
+      },
+      "50:1": {
+        "factor": 0.9487401565426161,
+        "events": 168,
+        "effective_events": 64.10978359875061
+      },
+      "300:1": {
+        "factor": 0.9798464584733366,
+        "events": 140,
+        "effective_events": 56.95501059546856
+      },
+      "500:1": {
+        "factor": 1.1509284044632193,
+        "events": 128,
+        "effective_events": 55.00254221817003
+      },
+      "500:3": {
+        "factor": 1.118770685452885,
+        "events": 146,
+        "effective_events": 60.353177756291785
+      },
+      "5000:4": {
+        "factor": 1.0697729323906635,
+        "events": 89,
+        "effective_events": 47.43388822499728
+      },
+      "5000:0": {
+        "factor": 1.2589799721756962,
+        "events": 88,
+        "effective_events": 47.82316892807299
+      },
+      "5000:3": {
+        "factor": 1.1005380793996702,
+        "events": 86,
+        "effective_events": 46.098855019444755
+      },
+      "5000:2": {
+        "factor": 1.1358680218841486,
+        "events": 86,
+        "effective_events": 45.83428146716644
+      },
+      "5000:1": {
+        "factor": 1.1814155534283555,
+        "events": 85,
+        "effective_events": 45.04724505164173
+      },
+      "20:4": {
+        "factor": 0.9955941201698999,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "30:4": {
+        "factor": 0.9894653133986541,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "40:4": {
+        "factor": 0.9981798910501498,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "200:4": {
+        "factor": 1.0349265415101798,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "400:4": {
+        "factor": 1.1037479179697036,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "3000:4": {
+        "factor": 1.05864170072853,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "4000:4": {
+        "factor": 1.0608980980752876,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "10000:4": {
+        "factor": 1.0363939041813046,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "20000:4": {
+        "factor": 0.9797936671159022,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "30000:4": {
+        "factor": 0.9066037147709922,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "20:3": {
+        "factor": 1.013519946113225,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "30:3": {
+        "factor": 1.0084421281714624,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "40:3": {
+        "factor": 0.9791714057173005,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "200:3": {
+        "factor": 0.9710407975951719,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "400:3": {
+        "factor": 1.0868886138152043,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "3000:3": {
+        "factor": 1.0808623664857426,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "4000:3": {
+        "factor": 1.088395367033304,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "10000:3": {
+        "factor": 1.053787719635984,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "20000:3": {
+        "factor": 1.0223207231151878,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "30000:3": {
+        "factor": 0.998804326945987,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "20:2": {
+        "factor": 1.020831629605125,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "30:2": {
+        "factor": 0.9964362187521424,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "40:2": {
+        "factor": 1.0123461257130169,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "200:2": {
+        "factor": 0.9726169371732797,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "400:2": {
+        "factor": 1.0897795920452076,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "3000:2": {
+        "factor": 1.104655239760439,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "4000:2": {
+        "factor": 1.114861139354217,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "10000:2": {
+        "factor": 1.0792934747677283,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "20000:2": {
+        "factor": 1.0383043127566056,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "30000:2": {
+        "factor": 1.0198571057939583,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "20:1": {
+        "factor": 0.9616334119071471,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "30:1": {
+        "factor": 1.0594569723694063,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "40:1": {
+        "factor": 0.996116577573744,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "200:1": {
+        "factor": 0.9475118417103695,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "400:1": {
+        "factor": 1.072801443388977,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "3000:1": {
+        "factor": 1.1331194498997652,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "4000:1": {
+        "factor": 1.1530390400935084,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "10000:1": {
+        "factor": 1.1081443383018035,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "20000:1": {
+        "factor": 1.0600665503175593,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "30000:1": {
+        "factor": 1.0243215569336235,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "40000:1": {
+        "factor": 0.9962179263897455,
+        "events": 83,
+        "effective_events": 44.292004879611746
+      },
+      "20:0": {
+        "factor": 1.1370894327521777,
+        "events": 84,
+        "effective_events": 46.228152757982805
+      },
+      "30:0": {
+        "factor": 1.121529107988479,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "40:0": {
+        "factor": 1.0714438581485393,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "200:0": {
+        "factor": 0.9328396807147148,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "400:0": {
+        "factor": 0.9923777524136191,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "3000:0": {
+        "factor": 1.1780110382161988,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "4000:0": {
+        "factor": 1.228627835941949,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "10000:0": {
+        "factor": 1.153655782229018,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "20000:0": {
+        "factor": 1.1169914110947419,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "30000:0": {
+        "factor": 1.0410672097982525,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "40000:0": {
+        "factor": 1.045392174162712,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "40000:3": {
+        "factor": 0.9719689638157114,
+        "events": 83,
+        "effective_events": 44.96215223940506
+      },
+      "40000:2": {
+        "factor": 0.9979666516288158,
+        "events": 83,
+        "effective_events": 44.697763473800464
+      },
+      "40000:4": {
+        "factor": 0.8962694364784929,
+        "events": 83,
+        "effective_events": 45.15916658965157
+      },
+      "50000:4": {
+        "factor": 0.9718799463090155,
+        "events": 80,
+        "effective_events": 43.446561274379086
+      },
+      "50000:3": {
+        "factor": 0.9719407184371835,
+        "events": 79,
+        "effective_events": 42.87126243874108
+      },
+      "50000:2": {
+        "factor": 0.9982057623816576,
+        "events": 80,
+        "effective_events": 43.02984006854389
+      },
+      "50000:1": {
+        "factor": 1.0220808232482905,
+        "events": 80,
+        "effective_events": 42.70544614654173
+      },
+      "70000:1": {
+        "factor": 1.0164040803663241,
+        "events": 77,
+        "effective_events": 41.09347017584298
+      },
+      "50000:0": {
+        "factor": 1.1721384650726079,
+        "events": 82,
+        "effective_events": 45.43890382990416
+      },
+      "70000:0": {
+        "factor": 1.026332042618865,
+        "events": 78,
+        "effective_events": 42.88631164929759
+      },
+      "70000:2": {
+        "factor": 1.0213929236470234,
+        "events": 75,
+        "effective_events": 40.40762760745045
+      },
+      "70000:4": {
+        "factor": 1.0969964424726564,
+        "events": 71,
+        "effective_events": 39.05634952816502
+      },
+      "70000:3": {
+        "factor": 1.0212592575595805,
+        "events": 71,
+        "effective_events": 38.9442933577436
+      },
+      "100000:0": {
+        "factor": 1.095076569771005,
+        "events": 69,
+        "effective_events": 38.159222478786
+      },
+      "100000:1": {
+        "factor": 1.0720576815666019,
+        "events": 65,
+        "effective_events": 35.79975328736347
+      },
+      "100000:2": {
+        "factor": 1.1105963490317075,
+        "events": 60,
+        "effective_events": 33.420949213275186
+      },
+      "100000:4": {
+        "factor": 1.2631076752897048,
+        "events": 44,
+        "effective_events": 24.911447246619154
+      },
+      "100000:3": {
+        "factor": 1.127251184017306,
+        "events": 50,
+        "effective_events": 28.1646902374223
+      },
+      "1500:4": {
+        "factor": 0.96820430825029,
+        "events": 8,
+        "effective_events": 7.989993493828442
+      },
+      "1500:3": {
+        "factor": 0.9724742862173787,
+        "events": 8,
+        "effective_events": 7.989993493828442
+      },
+      "1500:2": {
+        "factor": 0.979004626016982,
+        "events": 8,
+        "effective_events": 7.989993493828442
+      },
+      "1500:1": {
+        "factor": 0.9859269115851114,
+        "events": 8,
+        "effective_events": 7.989993493828442
+      },
+      "1500:0": {
+        "factor": 1.0204202676145493,
+        "events": 7,
+        "effective_events": 6.990585719062428
+      }
+    },
+    "base": {
+      "family_winners": {
+        "nn_minimal": "nn_minimal_h8_g0.5",
+        "nn_standard": "nn_standard_h8_g0.5",
+        "nn_rich": "nn_rich_h8_g1",
+        "nn_pca": "nn_pca_h8_g0.5",
+        "bagged": "bagged_g1",
+        "ridge": "ridge_pca_a0.01_g0.5",
+        "calibrated_stat": "calibrated_stat_a0.5",
+        "trajectory": "trajectory_b0.1",
+        "hierarchical": "hierarchical_a0.01_g1"
+      },
+      "components": {
+        "baseline": {
+          "kind": "baseline"
+        },
+        "nn_minimal": {
+          "kind": "nn",
+          "representation": "minimal",
+          "cores": [
+            "nn_minimal_h8"
+          ],
+          "gain": 0.5
+        },
+        "nn_standard": {
+          "kind": "nn",
+          "representation": "standard",
+          "cores": [
+            "nn_standard_h8"
+          ],
+          "gain": 0.5
+        },
+        "nn_rich": {
+          "kind": "nn",
+          "representation": "rich",
+          "cores": [
+            "nn_rich_h8"
+          ],
+          "gain": 1.0
+        },
+        "nn_pca": {
+          "kind": "nn",
+          "representation": "pca",
+          "cores": [
+            "nn_pca_h8"
+          ],
+          "gain": 0.5
+        },
+        "bagged": {
+          "kind": "bagged",
+          "representation": "standard",
+          "cores": [
+            "bag_standard_s1729",
+            "bag_standard_s1730",
+            "bag_standard_s1731"
+          ],
+          "gain": 1.0
+        },
+        "ridge": {
+          "kind": "ridge",
+          "representation": "pca",
+          "cores": [
+            "ridge_pca_a0.01"
+          ],
+          "gain": 0.5
+        },
+        "calibrated_stat": {
+          "kind": "statistical",
+          "alpha": 0.5
+        },
+        "trajectory": {
+          "kind": "trajectory",
+          "bandwidth": 0.1
+        },
+        "hierarchical": {
+          "kind": "hierarchical",
+          "core": "hierarchical_a0.01",
+          "gain": 1.0
+        },
+        "neural_winner": {
+          "kind": "nn",
+          "representation": "rich",
+          "cores": [
+            "nn_rich_h8"
+          ],
+          "gain": 1.0
+        }
+      },
+      "ensembles": {
+        "neural_mean": {
+          "method": "mean",
+          "members": [
+            "nn_minimal",
+            "nn_standard",
+            "nn_rich",
+            "nn_pca",
+            "bagged"
+          ]
+        },
+        "statistical_mean": {
+          "method": "mean",
+          "members": [
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_mean": {
+          "method": "mean",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_median": {
+          "method": "median",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_trimmed": {
+          "method": "trimmed_mean",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        }
+      },
+      "champion": "calibrated_stat",
+      "rule": "Original model choices retained; all fitted weights and statistical correction factors refitted on authorized earlier events"
+    },
+    "observer": {
+      "components": {
+        "baseline": {
+          "kind": "daily_stat",
+          "family": "baseline",
+          "blend": 1.0,
+          "flat_clock": false,
+          "candidate_name": "baseline_daily_b1"
+        },
+        "nn_minimal": {
+          "kind": "control",
+          "family": "nn_minimal"
+        },
+        "nn_standard": {
+          "kind": "control",
+          "family": "nn_standard"
+        },
+        "nn_rich": {
+          "kind": "control",
+          "family": "nn_rich"
+        },
+        "nn_pca": {
+          "kind": "daily_nn",
+          "representation": "pca",
+          "cores": [
+            "daily_nn_pca_h8"
+          ],
+          "gain": 1.0,
+          "candidate_name": "nn_pca_daily_g1"
+        },
+        "bagged": {
+          "kind": "control",
+          "family": "bagged"
+        },
+        "ridge": {
+          "kind": "control",
+          "family": "ridge"
+        },
+        "calibrated_stat": {
+          "kind": "daily_stat",
+          "family": "calibrated_stat",
+          "blend": 0.5,
+          "flat_clock": false,
+          "candidate_name": "calibrated_stat_daily_b0.5"
+        },
+        "trajectory": {
+          "kind": "daily_stat",
+          "family": "trajectory",
+          "blend": 1.0,
+          "flat_clock": false,
+          "candidate_name": "trajectory_daily_b1"
+        },
+        "hierarchical": {
+          "kind": "daily_hierarchical",
+          "core": "daily_hierarchical_a0.01",
+          "gain": 1.0,
+          "candidate_name": "hierarchical_daily_g1"
+        },
+        "tcn24": {
+          "kind": "control",
+          "family": "neural_winner"
+        },
+        "pace24_flat": {
+          "kind": "daily_stat",
+          "family": "baseline",
+          "blend": 1.0,
+          "flat_clock": true,
+          "candidate_name": "pace24_flat_daily_b1"
+        },
+        "neural_winner": {
+          "kind": "control",
+          "family": "nn_rich"
+        }
+      },
+      "paired_raw": {
+        "baseline": {
+          "kind": "daily_stat",
+          "family": "baseline",
+          "blend": 0.5,
+          "flat_clock": false
+        },
+        "nn_minimal": {
+          "kind": "daily_nn",
+          "representation": "minimal",
+          "cores": [
+            "daily_nn_minimal_h8"
+          ],
+          "gain": 0.5
+        },
+        "nn_standard": {
+          "kind": "daily_nn",
+          "representation": "standard",
+          "cores": [
+            "daily_nn_standard_h8"
+          ],
+          "gain": 0.5
+        },
+        "nn_rich": {
+          "kind": "daily_nn",
+          "representation": "rich",
+          "cores": [
+            "daily_nn_rich_h8"
+          ],
+          "gain": 1.0
+        },
+        "nn_pca": {
+          "kind": "daily_nn",
+          "representation": "pca",
+          "cores": [
+            "daily_nn_pca_h8"
+          ],
+          "gain": 0.5
+        },
+        "bagged": {
+          "kind": "daily_nn",
+          "representation": "standard",
+          "cores": [
+            "daily_bag_standard_s1729",
+            "daily_bag_standard_s1730",
+            "daily_bag_standard_s1731"
+          ],
+          "gain": 1.0
+        },
+        "ridge": {
+          "kind": "daily_ridge",
+          "representation": "pca",
+          "cores": [
+            "daily_ridge_pca_a0.01"
+          ],
+          "gain": 0.5
+        },
+        "calibrated_stat": {
+          "kind": "daily_stat",
+          "family": "calibrated_stat",
+          "blend": 0.5,
+          "flat_clock": false
+        },
+        "trajectory": {
+          "kind": "daily_stat",
+          "family": "trajectory",
+          "blend": 0.5,
+          "flat_clock": false
+        },
+        "hierarchical": {
+          "kind": "daily_hierarchical",
+          "core": "daily_hierarchical_a0.01",
+          "gain": 1.0
+        },
+        "tcn24": {
+          "kind": "temporal",
+          "core": "tcn24_c4",
+          "gain": 0.5
+        },
+        "pace24_flat": {
+          "kind": "daily_stat",
+          "family": "baseline",
+          "blend": 0.5,
+          "flat_clock": true
+        }
+      },
+      "ensembles": {
+        "neural_mean": {
+          "method": "mean",
+          "members": [
+            "nn_minimal",
+            "nn_standard",
+            "nn_rich",
+            "nn_pca",
+            "bagged"
+          ]
+        },
+        "statistical_mean": {
+          "method": "mean",
+          "members": [
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_mean": {
+          "method": "mean",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_median": {
+          "method": "median",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_trimmed": {
+          "method": "trimmed_mean",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        }
+      },
+      "champion": "calibrated_stat",
+      "control_champion": "calibrated_stat",
+      "neural_winner": "nn_rich",
+      "rule": "Frozen before calibration and test observer features are generated"
+    }
+  },
+  "trajectory": {
+    "kind": "statistical",
+    "factors": {
+      "2000:0": {
+        "factor": 1.074902919994518,
+        "events": 186,
+        "effective_events": 64.51549643092044
+      },
+      "1000:2": {
+        "factor": 0.9796418196490962,
+        "events": 175,
+        "effective_events": 58.23013046451289
+      },
+      "1000:0": {
+        "factor": 0.9331934756438246,
+        "events": 194,
+        "effective_events": 62.870157209985486
+      },
+      "1000:4": {
+        "factor": 0.970662992641119,
+        "events": 211,
+        "effective_events": 65.62864707594264
+      },
+      "1000:3": {
+        "factor": 0.9690946258805725,
+        "events": 181,
+        "effective_events": 59.67035175395169
+      },
+      "1000:1": {
+        "factor": 0.9629699100117372,
+        "events": 183,
+        "effective_events": 58.043159470395025
+      },
+      "2000:4": {
+        "factor": 1.0294942826750466,
+        "events": 194,
+        "effective_events": 64.41945664446928
+      },
+      "2000:2": {
+        "factor": 1.0754091085961548,
+        "events": 151,
+        "effective_events": 56.140685998070495
+      },
+      "100:1": {
+        "factor": 0.9300070228944756,
+        "events": 211,
+        "effective_events": 67.47042841777346
+      },
+      "100:3": {
+        "factor": 0.9507925437082008,
+        "events": 217,
+        "effective_events": 67.74616451194517
+      },
+      "100:2": {
+        "factor": 0.9402766699366214,
+        "events": 204,
+        "effective_events": 66.80554207038207
+      },
+      "2000:1": {
+        "factor": 1.0899970554061618,
+        "events": 152,
+        "effective_events": 55.95652092959334
+      },
+      "100:0": {
+        "factor": 0.9868764266491884,
+        "events": 235,
+        "effective_events": 76.73329551339101
+      },
+      "2000:3": {
+        "factor": 1.062270098619203,
+        "events": 157,
+        "effective_events": 57.372210669354764
+      },
+      "100:4": {
+        "factor": 0.913325045004272,
+        "events": 254,
+        "effective_events": 77.61285086525154
+      },
+      "1:2": {
+        "factor": 1.0797427252925564,
+        "events": 79,
+        "effective_events": 28.461547551472954
+      },
+      "10:2": {
+        "factor": 0.9513104251630147,
+        "events": 79,
+        "effective_events": 28.461547551472954
+      },
+      "1:1": {
+        "factor": 1.0224829917291625,
+        "events": 79,
+        "effective_events": 28.461547551472954
+      },
+      "10:1": {
+        "factor": 1.0140909987810274,
+        "events": 79,
+        "effective_events": 28.461547551472954
+      },
+      "1:0": {
+        "factor": 1.2794640907419121,
+        "events": 79,
+        "effective_events": 28.461547551472954
+      },
+      "10:0": {
+        "factor": 1.3842573252808184,
+        "events": 79,
+        "effective_events": 28.461547551472954
+      },
+      "1:4": {
+        "factor": 0.9783709944953102,
+        "events": 77,
+        "effective_events": 27.773046174801056
+      },
+      "10:4": {
+        "factor": 0.9187157618404899,
+        "events": 77,
+        "effective_events": 27.773046174801056
+      },
+      "1:3": {
+        "factor": 0.9689122494949443,
+        "events": 78,
+        "effective_events": 28.189328064868786
+      },
+      "10:3": {
+        "factor": 0.9003111028302679,
+        "events": 78,
+        "effective_events": 28.189328064868786
+      },
+      "50:4": {
+        "factor": 0.9932792666541385,
+        "events": 197,
+        "effective_events": 72.66022090754237
+      },
+      "300:3": {
+        "factor": 1.0235572867163558,
+        "events": 145,
+        "effective_events": 59.48232369163226
+      },
+      "50:2": {
+        "factor": 0.9583886059109515,
+        "events": 177,
+        "effective_events": 66.96578772402552
+      },
+      "300:2": {
+        "factor": 1.0138037976569225,
+        "events": 144,
+        "effective_events": 58.30169451317215
+      },
+      "300:0": {
+        "factor": 0.9185336757697722,
+        "events": 148,
+        "effective_events": 61.285827954149866
+      },
+      "50:0": {
+        "factor": 1.0159152508129943,
+        "events": 183,
+        "effective_events": 70.59629370218343
+      },
+      "300:4": {
+        "factor": 1.0479913840574164,
+        "events": 165,
+        "effective_events": 64.91883283179322
+      },
+      "500:2": {
+        "factor": 1.1122579702901938,
+        "events": 141,
+        "effective_events": 58.6008109960389
+      },
+      "500:0": {
+        "factor": 1.0553135615921125,
+        "events": 142,
+        "effective_events": 61.01242473627239
+      },
+      "500:4": {
+        "factor": 1.096681508570454,
+        "events": 158,
+        "effective_events": 63.767684497875884
+      },
+      "50:3": {
+        "factor": 0.9808071212613862,
+        "events": 168,
+        "effective_events": 64.28146453447724
+      },
+      "50:1": {
+        "factor": 0.9591070232331617,
+        "events": 168,
+        "effective_events": 64.10978359875061
+      },
+      "300:1": {
+        "factor": 0.9603201647173347,
+        "events": 140,
+        "effective_events": 56.95501059546856
+      },
+      "500:1": {
+        "factor": 1.1243151336652213,
+        "events": 128,
+        "effective_events": 55.00254221817003
+      },
+      "500:3": {
+        "factor": 1.0972087622667792,
+        "events": 146,
+        "effective_events": 60.353177756291785
+      },
+      "5000:4": {
+        "factor": 1.0619640066335478,
+        "events": 89,
+        "effective_events": 47.43388822499728
+      },
+      "5000:0": {
+        "factor": 1.246115663815064,
+        "events": 88,
+        "effective_events": 47.82316892807299
+      },
+      "5000:3": {
+        "factor": 1.0957023152180732,
+        "events": 86,
+        "effective_events": 46.098855019444755
+      },
+      "5000:2": {
+        "factor": 1.130065800890662,
+        "events": 86,
+        "effective_events": 45.83428146716644
+      },
+      "5000:1": {
+        "factor": 1.1717004699744007,
+        "events": 85,
+        "effective_events": 45.04724505164173
+      },
+      "20:4": {
+        "factor": 0.9973741109037065,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "30:4": {
+        "factor": 0.9886856516390388,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "40:4": {
+        "factor": 0.9971589207370066,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "200:4": {
+        "factor": 1.0296272411220073,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "400:4": {
+        "factor": 1.0971864650979888,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "3000:4": {
+        "factor": 1.0513887956555186,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "4000:4": {
+        "factor": 1.0535415057934816,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "10000:4": {
+        "factor": 1.0287029064358786,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "20000:4": {
+        "factor": 0.9752061071045212,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "30000:4": {
+        "factor": 0.9035344680251183,
+        "events": 86,
+        "effective_events": 46.30963901614249
+      },
+      "20:3": {
+        "factor": 1.0078854502901238,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "30:3": {
+        "factor": 1.008155502420554,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "40:3": {
+        "factor": 0.9774347285090492,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "200:3": {
+        "factor": 0.9685884307528783,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "400:3": {
+        "factor": 1.0810292363614935,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "3000:3": {
+        "factor": 1.0764872883759997,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "4000:3": {
+        "factor": 1.0837255447143546,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "10000:3": {
+        "factor": 1.0504090216034376,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "20000:3": {
+        "factor": 1.0214834162060933,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "30000:3": {
+        "factor": 1.00007402472476,
+        "events": 85,
+        "effective_events": 45.722846720642316
+      },
+      "20:2": {
+        "factor": 1.0315312568590709,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "30:2": {
+        "factor": 1.000928189857228,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "40:2": {
+        "factor": 1.0242152252853973,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "200:2": {
+        "factor": 0.9645837346485148,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "400:2": {
+        "factor": 1.078049669755787,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "3000:2": {
+        "factor": 1.0979974299080428,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "4000:2": {
+        "factor": 1.1070210206088844,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "10000:2": {
+        "factor": 1.0767292657784422,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "20000:2": {
+        "factor": 1.0397954341557905,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "30000:2": {
+        "factor": 1.0216390030223963,
+        "events": 85,
+        "effective_events": 45.45832742116105
+      },
+      "20:1": {
+        "factor": 0.9652648895761671,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "30:1": {
+        "factor": 1.0717577116548753,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "40:1": {
+        "factor": 1.006370949966456,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "200:1": {
+        "factor": 0.9397140649667988,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "400:1": {
+        "factor": 1.059293068283369,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "3000:1": {
+        "factor": 1.123184522705875,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "4000:1": {
+        "factor": 1.1434786193630473,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "10000:1": {
+        "factor": 1.1035630642223124,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "20000:1": {
+        "factor": 1.0571224692844898,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "30000:1": {
+        "factor": 1.0233925921592235,
+        "events": 84,
+        "effective_events": 44.67311029682547
+      },
+      "40000:1": {
+        "factor": 1.0005496330747459,
+        "events": 83,
+        "effective_events": 44.292004879611746
+      },
+      "20:0": {
+        "factor": 1.135296273118383,
+        "events": 84,
+        "effective_events": 46.228152757982805
+      },
+      "30:0": {
+        "factor": 1.1384362182425378,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "40:0": {
+        "factor": 1.078267567059882,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "200:0": {
+        "factor": 0.9265765756753467,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "400:0": {
+        "factor": 0.9746312210555361,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "3000:0": {
+        "factor": 1.1712984226831855,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "4000:0": {
+        "factor": 1.217337194310612,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "10000:0": {
+        "factor": 1.1488926205299415,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "20000:0": {
+        "factor": 1.1143739631669607,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "30000:0": {
+        "factor": 1.0404085732394819,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "40000:0": {
+        "factor": 1.0545284296389192,
+        "events": 85,
+        "effective_events": 46.644484531949686
+      },
+      "40000:3": {
+        "factor": 0.969108264107775,
+        "events": 83,
+        "effective_events": 44.96215223940506
+      },
+      "40000:2": {
+        "factor": 1.0034405496527854,
+        "events": 83,
+        "effective_events": 44.697763473800464
+      },
+      "40000:4": {
+        "factor": 0.9116153843200567,
+        "events": 83,
+        "effective_events": 45.15916658965157
+      },
+      "50000:4": {
+        "factor": 0.975280345907363,
+        "events": 80,
+        "effective_events": 43.446561274379086
+      },
+      "50000:3": {
+        "factor": 0.9714610059338085,
+        "events": 79,
+        "effective_events": 42.87126243874108
+      },
+      "50000:2": {
+        "factor": 1.004841467223244,
+        "events": 80,
+        "effective_events": 43.02984006854389
+      },
+      "50000:1": {
+        "factor": 1.0219233563898633,
+        "events": 80,
+        "effective_events": 42.70544614654173
+      },
+      "70000:1": {
+        "factor": 1.0087359748143678,
+        "events": 77,
+        "effective_events": 41.09347017584298
+      },
+      "50000:0": {
+        "factor": 1.1743922996984169,
+        "events": 82,
+        "effective_events": 45.43890382990416
+      },
+      "70000:0": {
+        "factor": 1.0171930099083504,
+        "events": 78,
+        "effective_events": 42.88631164929759
+      },
+      "70000:2": {
+        "factor": 1.020910745277378,
+        "events": 75,
+        "effective_events": 40.40762760745045
+      },
+      "70000:4": {
+        "factor": 1.0987811204727487,
+        "events": 71,
+        "effective_events": 39.05634952816502
+      },
+      "70000:3": {
+        "factor": 1.0089515661297754,
+        "events": 71,
+        "effective_events": 38.9442933577436
+      },
+      "100000:0": {
+        "factor": 1.0717474572350245,
+        "events": 69,
+        "effective_events": 38.159222478786
+      },
+      "100000:1": {
+        "factor": 1.0506427147143327,
+        "events": 65,
+        "effective_events": 35.79975328736347
+      },
+      "100000:2": {
+        "factor": 1.0938339606596286,
+        "events": 60,
+        "effective_events": 33.420949213275186
+      },
+      "100000:4": {
+        "factor": 1.2543892767253433,
+        "events": 44,
+        "effective_events": 24.911447246619154
+      },
+      "100000:3": {
+        "factor": 1.1060762908325317,
+        "events": 50,
+        "effective_events": 28.1646902374223
+      },
+      "1500:4": {
+        "factor": 0.9665420577130416,
+        "events": 8,
+        "effective_events": 7.989993493828442
+      },
+      "1500:3": {
+        "factor": 0.9698003668253304,
+        "events": 8,
+        "effective_events": 7.989993493828442
+      },
+      "1500:2": {
+        "factor": 0.9774398197125239,
+        "events": 8,
+        "effective_events": 7.989993493828442
+      },
+      "1500:1": {
+        "factor": 0.9829600717554784,
+        "events": 8,
+        "effective_events": 7.989993493828442
+      },
+      "1500:0": {
+        "factor": 1.0147972160655143,
+        "events": 7,
+        "effective_events": 6.990585719062428
+      }
+    },
+    "base": {
+      "family_winners": {
+        "nn_minimal": "nn_minimal_h8_g0.5",
+        "nn_standard": "nn_standard_h8_g0.5",
+        "nn_rich": "nn_rich_h8_g1",
+        "nn_pca": "nn_pca_h8_g0.5",
+        "bagged": "bagged_g1",
+        "ridge": "ridge_pca_a0.01_g0.5",
+        "calibrated_stat": "calibrated_stat_a0.5",
+        "trajectory": "trajectory_b0.1",
+        "hierarchical": "hierarchical_a0.01_g1"
+      },
+      "components": {
+        "baseline": {
+          "kind": "baseline"
+        },
+        "nn_minimal": {
+          "kind": "nn",
+          "representation": "minimal",
+          "cores": [
+            "nn_minimal_h8"
+          ],
+          "gain": 0.5
+        },
+        "nn_standard": {
+          "kind": "nn",
+          "representation": "standard",
+          "cores": [
+            "nn_standard_h8"
+          ],
+          "gain": 0.5
+        },
+        "nn_rich": {
+          "kind": "nn",
+          "representation": "rich",
+          "cores": [
+            "nn_rich_h8"
+          ],
+          "gain": 1.0
+        },
+        "nn_pca": {
+          "kind": "nn",
+          "representation": "pca",
+          "cores": [
+            "nn_pca_h8"
+          ],
+          "gain": 0.5
+        },
+        "bagged": {
+          "kind": "bagged",
+          "representation": "standard",
+          "cores": [
+            "bag_standard_s1729",
+            "bag_standard_s1730",
+            "bag_standard_s1731"
+          ],
+          "gain": 1.0
+        },
+        "ridge": {
+          "kind": "ridge",
+          "representation": "pca",
+          "cores": [
+            "ridge_pca_a0.01"
+          ],
+          "gain": 0.5
+        },
+        "calibrated_stat": {
+          "kind": "statistical",
+          "alpha": 0.5
+        },
+        "trajectory": {
+          "kind": "trajectory",
+          "bandwidth": 0.1
+        },
+        "hierarchical": {
+          "kind": "hierarchical",
+          "core": "hierarchical_a0.01",
+          "gain": 1.0
+        },
+        "neural_winner": {
+          "kind": "nn",
+          "representation": "rich",
+          "cores": [
+            "nn_rich_h8"
+          ],
+          "gain": 1.0
+        }
+      },
+      "ensembles": {
+        "neural_mean": {
+          "method": "mean",
+          "members": [
+            "nn_minimal",
+            "nn_standard",
+            "nn_rich",
+            "nn_pca",
+            "bagged"
+          ]
+        },
+        "statistical_mean": {
+          "method": "mean",
+          "members": [
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_mean": {
+          "method": "mean",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_median": {
+          "method": "median",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_trimmed": {
+          "method": "trimmed_mean",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        }
+      },
+      "champion": "calibrated_stat",
+      "rule": "Original model choices retained; all fitted weights and statistical correction factors refitted on authorized earlier events"
+    },
+    "observer": {
+      "components": {
+        "baseline": {
+          "kind": "daily_stat",
+          "family": "baseline",
+          "blend": 1.0,
+          "flat_clock": false,
+          "candidate_name": "baseline_daily_b1"
+        },
+        "nn_minimal": {
+          "kind": "control",
+          "family": "nn_minimal"
+        },
+        "nn_standard": {
+          "kind": "control",
+          "family": "nn_standard"
+        },
+        "nn_rich": {
+          "kind": "control",
+          "family": "nn_rich"
+        },
+        "nn_pca": {
+          "kind": "daily_nn",
+          "representation": "pca",
+          "cores": [
+            "daily_nn_pca_h8"
+          ],
+          "gain": 1.0,
+          "candidate_name": "nn_pca_daily_g1"
+        },
+        "bagged": {
+          "kind": "control",
+          "family": "bagged"
+        },
+        "ridge": {
+          "kind": "control",
+          "family": "ridge"
+        },
+        "calibrated_stat": {
+          "kind": "daily_stat",
+          "family": "calibrated_stat",
+          "blend": 0.5,
+          "flat_clock": false,
+          "candidate_name": "calibrated_stat_daily_b0.5"
+        },
+        "trajectory": {
+          "kind": "daily_stat",
+          "family": "trajectory",
+          "blend": 1.0,
+          "flat_clock": false,
+          "candidate_name": "trajectory_daily_b1"
+        },
+        "hierarchical": {
+          "kind": "daily_hierarchical",
+          "core": "daily_hierarchical_a0.01",
+          "gain": 1.0,
+          "candidate_name": "hierarchical_daily_g1"
+        },
+        "tcn24": {
+          "kind": "control",
+          "family": "neural_winner"
+        },
+        "pace24_flat": {
+          "kind": "daily_stat",
+          "family": "baseline",
+          "blend": 1.0,
+          "flat_clock": true,
+          "candidate_name": "pace24_flat_daily_b1"
+        },
+        "neural_winner": {
+          "kind": "control",
+          "family": "nn_rich"
+        }
+      },
+      "paired_raw": {
+        "baseline": {
+          "kind": "daily_stat",
+          "family": "baseline",
+          "blend": 0.5,
+          "flat_clock": false
+        },
+        "nn_minimal": {
+          "kind": "daily_nn",
+          "representation": "minimal",
+          "cores": [
+            "daily_nn_minimal_h8"
+          ],
+          "gain": 0.5
+        },
+        "nn_standard": {
+          "kind": "daily_nn",
+          "representation": "standard",
+          "cores": [
+            "daily_nn_standard_h8"
+          ],
+          "gain": 0.5
+        },
+        "nn_rich": {
+          "kind": "daily_nn",
+          "representation": "rich",
+          "cores": [
+            "daily_nn_rich_h8"
+          ],
+          "gain": 1.0
+        },
+        "nn_pca": {
+          "kind": "daily_nn",
+          "representation": "pca",
+          "cores": [
+            "daily_nn_pca_h8"
+          ],
+          "gain": 0.5
+        },
+        "bagged": {
+          "kind": "daily_nn",
+          "representation": "standard",
+          "cores": [
+            "daily_bag_standard_s1729",
+            "daily_bag_standard_s1730",
+            "daily_bag_standard_s1731"
+          ],
+          "gain": 1.0
+        },
+        "ridge": {
+          "kind": "daily_ridge",
+          "representation": "pca",
+          "cores": [
+            "daily_ridge_pca_a0.01"
+          ],
+          "gain": 0.5
+        },
+        "calibrated_stat": {
+          "kind": "daily_stat",
+          "family": "calibrated_stat",
+          "blend": 0.5,
+          "flat_clock": false
+        },
+        "trajectory": {
+          "kind": "daily_stat",
+          "family": "trajectory",
+          "blend": 0.5,
+          "flat_clock": false
+        },
+        "hierarchical": {
+          "kind": "daily_hierarchical",
+          "core": "daily_hierarchical_a0.01",
+          "gain": 1.0
+        },
+        "tcn24": {
+          "kind": "temporal",
+          "core": "tcn24_c4",
+          "gain": 0.5
+        },
+        "pace24_flat": {
+          "kind": "daily_stat",
+          "family": "baseline",
+          "blend": 0.5,
+          "flat_clock": true
+        }
+      },
+      "ensembles": {
+        "neural_mean": {
+          "method": "mean",
+          "members": [
+            "nn_minimal",
+            "nn_standard",
+            "nn_rich",
+            "nn_pca",
+            "bagged"
+          ]
+        },
+        "statistical_mean": {
+          "method": "mean",
+          "members": [
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_mean": {
+          "method": "mean",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_median": {
+          "method": "median",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        },
+        "collection_trimmed": {
+          "method": "trimmed_mean",
+          "members": [
+            "baseline",
+            "neural_winner",
+            "ridge",
+            "calibrated_stat",
+            "trajectory",
+            "hierarchical"
+          ]
+        }
+      },
+      "champion": "calibrated_stat",
+      "control_champion": "calibrated_stat",
+      "neural_winner": "nn_rich",
+      "rule": "Frozen before calibration and test observer features are generated"
+    }
+  },
+  "tcn24": {
+    "kind": "temporal",
+    "core": "tcn24",
+    "gain": 0.5
+  },
+  "raw_lstm": {
+    "kind": "lstm",
+    "core": "raw_lstm"
+  }
+}

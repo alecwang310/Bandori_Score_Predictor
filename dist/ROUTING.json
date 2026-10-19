@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "registry": "models/registry.json",
+  "threshold_hours": 240.0,
+  "condition": "total scheduled duration > 240 hours",
+  "above_threshold": "ridge",
+  "at_or_below_threshold": "fresh",
+  "fresh_model_sha256": "353bf44c6014853d539ffe0f9c0b52d8c6e7895facb896c31ea99cb02449527b",
+  "ridge_deployment_sha256": "0d8e6daa940f2af078b2038404eea384e4eee1769f5b999134bb9f465e04c57e",
+  "ridge_source_model_sha256": "a9d1c0c7b0ba0e84b7dea9c54764c33d898223e649e90fa66ae7f10584c8c678",
+  "stack_deployment_sha256": "04050e7a6213ca7960159d1da7ddbfd710f95c558a74227e00a20b758a7f4414",
+  "stack_joint_model_sha256": "fde9ca2f18bc0bc9f31c1e9e97fb1c0845ccf14a5e927b5db0270759f3b419d4",
+  "selection_basis": "Explicit user instruction after inspecting event 325; not a test-independent routing rule",
+  "manual_choices": [
+    "auto",
+    "fresh",
+    "ridge",
+    "stack"
+  ],
+  "default": "stack",
+  "default_selection_basis": "User requested the existing best production stack and concise report; explicit auto retains the 240h rule",
+  "weights_refitted": false,
+  "stack_sigma_sha256": "e54ffc6ad2da3919150ddb547c5323993e2f350be8af3fe8b6aa66a42bfc3173"
+}

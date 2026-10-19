@@ -1,0 +1,56 @@
+{
+ "model": "stack recipe (rule+explicit 600, JointNet h8 seed1729, gain 1.0) on ALL pre-325 data",
+ "supervised_events": 319,
+ "fit_cutoff": 1790647200.0,
+ "weighted_cells": 51749,
+ "known_comparison": {
+  "stack_post20": {
+   "external_24pts": 0.0435,
+   "standing_164rows": 0.0748
+  },
+  "ridge_full_refit": {
+   "external_24pts": 0.0431,
+   "standing_164rows": 0.0879
+  },
+  "baseline": {
+   "external_24pts": 0.0865,
+   "standing_164rows": 0.1473
+  }
+ },
+ "sets": {
+  "external_24pts": {
+   "stack_all_pre325": {
+    "rows": 24,
+    "mape": 0.06137149783585613,
+    "bias": 0.034366156748190296
+   },
+   "ridge_full_refit": {
+    "rows": 24,
+    "mape": 0.04307469034481867,
+    "bias": -0.015011699089342495
+   },
+   "baseline": {
+    "rows": 24,
+    "mape": 0.08647832457257432,
+    "bias": -0.0694754040514202
+   }
+  },
+  "standing_164rows": {
+   "stack_all_pre325": {
+    "rows": 164,
+    "mape": 0.08853817264956262,
+    "bias": -0.009413576068714982
+   },
+   "ridge_full_refit": {
+    "rows": 164,
+    "mape": 0.08790822825824854,
+    "bias": -0.06304930140667965
+   },
+   "baseline": {
+    "rows": 164,
+    "mape": 0.14728575238472524,
+    "bias": -0.13448135112161244
+   }
+  }
+ }
+}

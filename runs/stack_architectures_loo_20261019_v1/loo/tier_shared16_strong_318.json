@@ -1,0 +1,93 @@
+{
+  "candidate": "tier_shared16_strong",
+  "held": 318,
+  "params": 872,
+  "metrics": {
+    "overall": {
+      "rows": 104,
+      "events": 1,
+      "mape": 0.09326615966032797,
+      "bias": -0.006865251175923544
+    },
+    "last24h": {
+      "rows": 0,
+      "events": 0,
+      "mape": null,
+      "bias": null
+    },
+    "morning": {
+      "rows": 32,
+      "events": 1,
+      "mape": 0.09472460579016241,
+      "bias": -0.017048520210681303
+    },
+    "by_event": {
+      "318": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.09326615966032797,
+        "bias": -0.006865251175923544
+      }
+    }
+  },
+  "seed_metrics": [
+    {
+      "overall": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.0934431449497691,
+        "bias": -0.0061241480478705
+      },
+      "last24h": {
+        "rows": 0,
+        "events": 0,
+        "mape": null,
+        "bias": null
+      },
+      "morning": {
+        "rows": 32,
+        "events": 1,
+        "mape": 0.09480276525015008,
+        "bias": -0.016366922283938722
+      },
+      "by_event": {
+        "318": {
+          "rows": 104,
+          "events": 1,
+          "mape": 0.0934431449497691,
+          "bias": -0.0061241480478705
+        }
+      }
+    },
+    {
+      "overall": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.09308917437088682,
+        "bias": -0.0076063543039766035
+      },
+      "last24h": {
+        "rows": 0,
+        "events": 0,
+        "mape": null,
+        "bias": null
+      },
+      "morning": {
+        "rows": 32,
+        "events": 1,
+        "mape": 0.09464644633017474,
+        "bias": -0.017730118137423884
+      },
+      "by_event": {
+        "318": {
+          "rows": 104,
+          "events": 1,
+          "mape": 0.09308917437088682,
+          "bias": -0.0076063543039766035
+        }
+      }
+    }
+  ],
+  "seconds": 2.251994875026867,
+  "protocol_sha256": "4a622f080aec4d8b9cafa64c3aa2ee7643221ed9012dc77871295b4313d59978"
+}

@@ -1,0 +1,93 @@
+{
+  "candidate": "local_skip8_short",
+  "held": 318,
+  "params": 5120,
+  "metrics": {
+    "overall": {
+      "rows": 104,
+      "events": 1,
+      "mape": 0.07149329618554684,
+      "bias": -0.01018266021873267
+    },
+    "last24h": {
+      "rows": 0,
+      "events": 0,
+      "mape": null,
+      "bias": null
+    },
+    "morning": {
+      "rows": 32,
+      "events": 1,
+      "mape": 0.07233426417027222,
+      "bias": -0.020016508375888045
+    },
+    "by_event": {
+      "318": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.07149329618554684,
+        "bias": -0.01018266021873267
+      }
+    }
+  },
+  "seed_metrics": [
+    {
+      "overall": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.07164334026311336,
+        "bias": -0.011087730152975123
+      },
+      "last24h": {
+        "rows": 0,
+        "events": 0,
+        "mape": null,
+        "bias": null
+      },
+      "morning": {
+        "rows": 32,
+        "events": 1,
+        "mape": 0.07260805260023989,
+        "bias": -0.020826532368332044
+      },
+      "by_event": {
+        "318": {
+          "rows": 104,
+          "events": 1,
+          "mape": 0.07164334026311336,
+          "bias": -0.011087730152975123
+        }
+      }
+    },
+    {
+      "overall": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.07140398514725148,
+        "bias": -0.009277590284490215
+      },
+      "last24h": {
+        "rows": 0,
+        "events": 0,
+        "mape": null,
+        "bias": null
+      },
+      "morning": {
+        "rows": 32,
+        "events": 1,
+        "mape": 0.07206047574030452,
+        "bias": -0.01920648438344404
+      },
+      "by_event": {
+        "318": {
+          "rows": 104,
+          "events": 1,
+          "mape": 0.07140398514725148,
+          "bias": -0.009277590284490215
+        }
+      }
+    }
+  ],
+  "seconds": 0.24370383308269083,
+  "protocol_sha256": "4a622f080aec4d8b9cafa64c3aa2ee7643221ed9012dc77871295b4313d59978"
+}

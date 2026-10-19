@@ -1,0 +1,93 @@
+{
+  "candidate": "deep32_8_strong",
+  "held": 318,
+  "params": 19712,
+  "metrics": {
+    "overall": {
+      "rows": 104,
+      "events": 1,
+      "mape": 0.09656541015519532,
+      "bias": 0.006610083125706628
+    },
+    "last24h": {
+      "rows": 0,
+      "events": 0,
+      "mape": null,
+      "bias": null
+    },
+    "morning": {
+      "rows": 32,
+      "events": 1,
+      "mape": 0.09884101904147646,
+      "bias": -0.003517956866412826
+    },
+    "by_event": {
+      "318": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.09656541015519532,
+        "bias": 0.006610083125706628
+      }
+    }
+  },
+  "seed_metrics": [
+    {
+      "overall": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.09656539015593066,
+        "bias": 0.006610155957157713
+      },
+      "last24h": {
+        "rows": 0,
+        "events": 0,
+        "mape": null,
+        "bias": null
+      },
+      "morning": {
+        "rows": 32,
+        "events": 1,
+        "mape": 0.09884099906469507,
+        "bias": -0.0035178856735284744
+      },
+      "by_event": {
+        "318": {
+          "rows": 104,
+          "events": 1,
+          "mape": 0.09656539015593066,
+          "bias": 0.006610155957157713
+        }
+      }
+    },
+    {
+      "overall": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.09656543015445997,
+        "bias": 0.006610010294255536
+      },
+      "last24h": {
+        "rows": 0,
+        "events": 0,
+        "mape": null,
+        "bias": null
+      },
+      "morning": {
+        "rows": 32,
+        "events": 1,
+        "mape": 0.09884103901825786,
+        "bias": -0.0035180280592971395
+      },
+      "by_event": {
+        "318": {
+          "rows": 104,
+          "events": 1,
+          "mape": 0.09656543015445997,
+          "bias": 0.006610010294255536
+        }
+      }
+    }
+  ],
+  "seconds": 0.5864177499897778,
+  "protocol_sha256": "4a622f080aec4d8b9cafa64c3aa2ee7643221ed9012dc77871295b4313d59978"
+}

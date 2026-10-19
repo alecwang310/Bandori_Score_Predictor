@@ -1,0 +1,93 @@
+{
+  "candidate": "deep32_8_short",
+  "held": 318,
+  "params": 19712,
+  "metrics": {
+    "overall": {
+      "rows": 104,
+      "events": 1,
+      "mape": 0.08412049750280204,
+      "bias": 0.00333958039459581
+    },
+    "last24h": {
+      "rows": 0,
+      "events": 0,
+      "mape": null,
+      "bias": null
+    },
+    "morning": {
+      "rows": 32,
+      "events": 1,
+      "mape": 0.08497922392705523,
+      "bias": -0.006604069420772598
+    },
+    "by_event": {
+      "318": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.08412049750280204,
+        "bias": 0.00333958039459581
+      }
+    }
+  },
+  "seed_metrics": [
+    {
+      "overall": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.08357189277871153,
+        "bias": 0.0016893707051131002
+      },
+      "last24h": {
+        "rows": 0,
+        "events": 0,
+        "mape": null,
+        "bias": null
+      },
+      "morning": {
+        "rows": 32,
+        "events": 1,
+        "mape": 0.08461554023939906,
+        "bias": -0.00806621723546445
+      },
+      "by_event": {
+        "318": {
+          "rows": 104,
+          "events": 1,
+          "mape": 0.08357189277871153,
+          "bias": 0.0016893707051131002
+        }
+      }
+    },
+    {
+      "overall": {
+        "rows": 104,
+        "events": 1,
+        "mape": 0.08466910222689253,
+        "bias": 0.004989790084078515
+      },
+      "last24h": {
+        "rows": 0,
+        "events": 0,
+        "mape": null,
+        "bias": null
+      },
+      "morning": {
+        "rows": 32,
+        "events": 1,
+        "mape": 0.08534290761471142,
+        "bias": -0.005141921606080759
+      },
+      "by_event": {
+        "318": {
+          "rows": 104,
+          "events": 1,
+          "mape": 0.08466910222689253,
+          "bias": 0.004989790084078515
+        }
+      }
+    }
+  ],
+  "seconds": 0.30482125002890825,
+  "protocol_sha256": "4a622f080aec4d8b9cafa64c3aa2ee7643221ed9012dc77871295b4313d59978"
+}

@@ -1,0 +1,519 @@
+{
+  "api_version": 1,
+  "model": {
+    "name": "stack",
+    "kind": "bandori_cn_joint_deployment_v1",
+    "selection": "manual",
+    "reason": "manual override --model stack; auto rule would select fresh"
+  },
+  "event_id": 326,
+  "event_name": "迈向广阔世界的自由变奏",
+  "event_type": "versus",
+  "checkpoint_cn": "2026-10-17T20:00:00+08:00",
+  "closes_cn": "2026-10-24T22:59:59+08:00",
+  "hours_remaining": 170.99972222222223,
+  "total_duration_hours": 201.99972222222223,
+  "routing": {
+    "rule": "total scheduled duration > 240 hours -> ridge; otherwise fresh",
+    "threshold": 240.0,
+    "selected": "stack"
+  },
+  "predictions": [
+    {
+      "tier": 1,
+      "status": "ok",
+      "final": 60345907,
+      "current": 12169085,
+      "observed_at": "2026-10-17T11:19:08+00:00",
+      "score_age_hours": 0.6808952777915531,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 71393018.57073921,
+        "remaining_multiplier": 0.8134687922526596,
+        "raw_correction": -0.20644771537892234,
+        "supervised_training_targets": 72,
+        "trained": true
+      }
+    },
+    {
+      "tier": 10,
+      "status": "ok",
+      "final": 46265755,
+      "current": 10822270,
+      "observed_at": "2026-10-17T11:19:08+00:00",
+      "score_age_hours": 0.6808952777915531,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 51135118.112887695,
+        "remaining_multiplier": 0.6654628691838679,
+        "raw_correction": -0.4072724365669654,
+        "supervised_training_targets": 72,
+        "trained": true
+      }
+    },
+    {
+      "tier": 20,
+      "status": "ok",
+      "final": 46265755,
+      "current": 7308980,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 42576389.32152554,
+        "remaining_multiplier": 1.1046111792059967,
+        "raw_correction": 0.0994933990258038,
+        "supervised_training_targets": 736,
+        "trained": true
+      }
+    },
+    {
+      "tier": 30,
+      "status": "ok",
+      "final": 27576445,
+      "current": 4570570,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 26095596.242225695,
+        "remaining_multiplier": 1.0687965965551354,
+        "raw_correction": 0.06653333943433515,
+        "supervised_training_targets": 741,
+        "trained": true
+      }
+    },
+    {
+      "tier": 40,
+      "status": "ok",
+      "final": 19525329,
+      "current": 3402485,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 18673860.781091027,
+        "remaining_multiplier": 1.055755786963303,
+        "raw_correction": 0.054256896193452926,
+        "supervised_training_targets": 741,
+        "trained": true
+      }
+    },
+    {
+      "tier": 50,
+      "status": "ok",
+      "final": 15977364,
+      "current": 2678615,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 15040104.997985087,
+        "remaining_multiplier": 1.0758208268050968,
+        "raw_correction": 0.07308393003482874,
+        "supervised_training_targets": 739,
+        "trained": true
+      }
+    },
+    {
+      "tier": 100,
+      "status": "ok",
+      "final": 8933521,
+      "current": 1571210,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 9225346.970367273,
+        "remaining_multiplier": 0.9618734016770144,
+        "raw_correction": -0.03887243606469299,
+        "supervised_training_targets": 743,
+        "trained": true
+      }
+    },
+    {
+      "tier": 200,
+      "status": "ok",
+      "final": 4470060,
+      "current": 908341,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 4238065.499342074,
+        "remaining_multiplier": 1.0696735468969734,
+        "raw_correction": 0.06735350556448338,
+        "supervised_training_targets": 743,
+        "trained": true
+      }
+    },
+    {
+      "tier": 300,
+      "status": "ok",
+      "final": 4186586,
+      "current": 720936,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 3691240.9539317233,
+        "remaining_multiplier": 1.166765406415156,
+        "raw_correction": 0.15423531031613127,
+        "supervised_training_targets": 743,
+        "trained": true
+      }
+    },
+    {
+      "tier": 400,
+      "status": "ok",
+      "final": 4145777,
+      "current": 609225,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 3514369.9875497543,
+        "remaining_multiplier": 1.2173406885611717,
+        "raw_correction": 0.19666871612837303,
+        "supervised_training_targets": 743,
+        "trained": true
+      }
+    },
+    {
+      "tier": 500,
+      "status": "ok",
+      "final": 3966815,
+      "current": 531860,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 3223929.100683941,
+        "remaining_multiplier": 1.2759533606310123,
+        "raw_correction": 0.24369363302497143,
+        "supervised_training_targets": 743,
+        "trained": true
+      }
+    },
+    {
+      "tier": 1000,
+      "status": "ok",
+      "final": 1945733,
+      "current": 333495,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 2279880.5001263907,
+        "remaining_multiplier": 0.778398979547051,
+        "raw_correction": -0.2505160590733658,
+        "supervised_training_targets": 743,
+        "trained": true
+      }
+    },
+    {
+      "tier": 1500,
+      "status": "ok",
+      "final": 1945733,
+      "current": 266808,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 2050820.9412506546,
+        "remaining_multiplier": 0.9410941138312696,
+        "raw_correction": -0.060712129699414016,
+        "supervised_training_targets": 284,
+        "trained": true
+      }
+    },
+    {
+      "tier": 2000,
+      "status": "ok",
+      "final": 1580956,
+      "current": 230840,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 1387738.6468015988,
+        "remaining_multiplier": 1.1670128003640587,
+        "raw_correction": 0.1544473218509984,
+        "supervised_training_targets": 741,
+        "trained": true
+      }
+    },
+    {
+      "tier": 3000,
+      "status": "ok",
+      "final": 1041016,
+      "current": 185440,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 973048.9017676745,
+        "remaining_multiplier": 1.0862949521225702,
+        "raw_correction": 0.0827727795928364,
+        "supervised_training_targets": 741,
+        "trained": true
+      }
+    },
+    {
+      "tier": 4000,
+      "status": "ok",
+      "final": 825383,
+      "current": 153900,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 784490.8726695889,
+        "remaining_multiplier": 1.0648465320697273,
+        "raw_correction": 0.06283068743481326,
+        "supervised_training_targets": 741,
+        "trained": true
+      }
+    },
+    {
+      "tier": 5000,
+      "status": "ok",
+      "final": 721821,
+      "current": 130850,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 684760.4504562971,
+        "remaining_multiplier": 1.0669069746202513,
+        "raw_correction": 0.06476378447036703,
+        "supervised_training_targets": 741,
+        "trained": true
+      }
+    },
+    {
+      "tier": 10000,
+      "status": "ok",
+      "final": 389004,
+      "current": 74000,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 375807.9269214876,
+        "remaining_multiplier": 1.043721209893136,
+        "raw_correction": 0.04279241346658342,
+        "supervised_training_targets": 740,
+        "trained": true
+      }
+    },
+    {
+      "tier": 20000,
+      "status": "ok",
+      "final": 209195,
+      "current": 37705,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 195665.4632885946,
+        "remaining_multiplier": 1.0856460206407963,
+        "raw_correction": 0.08217522053462853,
+        "supervised_training_targets": 731,
+        "trained": true
+      }
+    },
+    {
+      "tier": 30000,
+      "status": "ok",
+      "final": 123399,
+      "current": 20775,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 113809.54527008192,
+        "remaining_multiplier": 1.1030637237311205,
+        "raw_correction": 0.09809151170421448,
+        "supervised_training_targets": 701,
+        "trained": true
+      }
+    },
+    {
+      "tier": 40000,
+      "status": "ok",
+      "final": 71530,
+      "current": 9960,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 61745.70733898877,
+        "remaining_multiplier": 1.1889312800641814,
+        "raw_correction": 0.17305481962472719,
+        "supervised_training_targets": 663,
+        "trained": true
+      }
+    },
+    {
+      "tier": 50000,
+      "status": "ok",
+      "final": 17239,
+      "current": 1910,
+      "observed_at": "2026-10-17T11:45:08+00:00",
+      "score_age_hours": 0.2477777777777778,
+      "sigma": {
+        "value": null,
+        "relative": null,
+        "method": "uncalibrated",
+        "note": "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+      },
+      "detail": {
+        "baseline": 14549.222269742793,
+        "remaining_multiplier": 1.2127423101795767,
+        "raw_correction": 0.1928841673105331,
+        "supervised_training_targets": 631,
+        "trained": true
+      }
+    },
+    {
+      "tier": 70000,
+      "status": "unavailable",
+      "final": null,
+      "current": null,
+      "observed_at": null,
+      "score_age_hours": null,
+      "sigma": null,
+      "detail": {
+        "reason": "No positive score known at this checkpoint"
+      }
+    },
+    {
+      "tier": 100000,
+      "status": "unavailable",
+      "final": null,
+      "current": null,
+      "observed_at": null,
+      "score_age_hours": null,
+      "sigma": null,
+      "detail": {
+        "reason": "No positive score known at this checkpoint"
+      }
+    }
+  ],
+  "limitations": [
+    "Single held-out validation: event 325 scored 4.50% (external 24 fresh-input points) and 7.55% (standing 164 focal-tier rows) MAPE; descriptive, not an independent fresh test",
+    "Events 325/326 are excluded from fitting (fit_cutoff = start of event 325)",
+    "Sigma is uncalibrated: no uncertainty interval is produced for stack forecasts",
+    "Hyperparameters (hidden 8, seed 1729, 240 epochs, gain 1.0) are inherited from the frozen sweep recipe and were not re-selected for this exact 30-event scope",
+    "Supervised labels include closing-tracker proxies; RMS-like errors contain systematic bias and carry no coverage guarantee",
+    "Reference/analog pool stops at event 324; forecasts for events inside that pool are rejected",
+    "Routing rule provenance: Explicit user instruction after inspecting event 325; not a test-independent routing rule",
+    "Stack sigma is not calibrated; no uncertainty interval is provided (sigma.method = \"uncalibrated\")"
+  ]
+}

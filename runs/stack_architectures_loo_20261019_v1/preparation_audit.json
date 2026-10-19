@@ -1,0 +1,7 @@
+{
+  "held_event_curve_and_label_poisoning_invariant": true,
+  "test_events_absent_from_training_bank": true,
+  "fold_count": 8,
+  "base_cases_sha256": "043af13215b662c9c7a630cf8225fd932dbe5c7978e35637daef39d666464d6c",
+  "completed_at_utc": "2026-10-19T15:19:47.217697+00:00"
+}
