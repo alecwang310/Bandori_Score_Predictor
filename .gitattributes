@@ -1,2 +1,5 @@
-# Preserve exact experiment and package bytes across checkout.
-* -text -eol
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.npz binary
+*.bat text eol=crlf

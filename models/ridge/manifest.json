@@ -1,0 +1,82 @@
+{
+  "name": "ridge",
+  "kind": "Recent rule/state Ridge",
+  "api_version": 1,
+  "fit_cutoff": 1790647200.0,
+  "supervised_events": 30,
+  "assets": {
+    "reference_bank.npz": "36ca2cdac046c9a106ed4ec4d4728e4f966b497b8f5ee8fbe2af3f8d5e3e6049",
+    "config.json": "26bceafb54d9e6c26bccbda019163c8d1ceb639f083f0f81cb32e5aa423c137a",
+    "ridge.npz": "65357df51a0de7c3728bbb94aaa1d7a6444b506021eb81cba6e75286ab82ff1b",
+    "reference_bank.json": "3a25f14fda1252ed682b3994288618780c12100fb43665f1360e7831a8864a6c",
+    "sigma.json": "2fcd3ab1447a494ae8754990035a11810c1b6329363098a024dfd5ee3182d4b5"
+  },
+  "training_provenance": {
+    "references": 319,
+    "through_event": 324,
+    "supervised_event_ids": [
+      293,
+      294,
+      295,
+      296,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      311,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324
+    ],
+    "supervision": "30 most recent usable targets, selected by actual CN end time",
+    "strength": 0.0003,
+    "gain": 1,
+    "age_characteristic_days": 730,
+    "post_rule_multiplier": 3,
+    "proxy_quality": 0.75
+  },
+  "sigma": {
+    "path": "sigma.json",
+    "method": "loglinear_two_clock_rms",
+    "events": [
+      311,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324
+    ],
+    "same_tier_only": true
+  },
+  "limitations": [
+    "Chosen from inspected pre321 research and chronological robustness checks; not an untouched hypothesis.",
+    "Production coefficients use321–324; assessment uses a separate pre321 fit.",
+    "Eight post-rule calibration events; sigma is approximate and can be optimistic after selection.",
+    "Closing tracker labels are proxies, not official finals."
+  ],
+  "point_source_sha256": "213fb3392d6741add0950d5c271f1b3188e6219a972eab69599d8b878fc1270c"
+}

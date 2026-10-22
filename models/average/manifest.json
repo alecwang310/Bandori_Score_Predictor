@@ -1,0 +1,37 @@
+{
+  "name": "average",
+  "kind": "两模型平均",
+  "api_version": 1,
+  "fit_cutoff": 1790647200.0,
+  "supervised_events": 314,
+  "assets": {
+    "config.json": "26bceafb54d9e6c26bccbda019163c8d1ceb639f083f0f81cb32e5aa423c137a",
+    "sigma.json": "f19566550e6ed41ca9ff92daa8674143e02707ff9623756633506a079345dc8d"
+  },
+  "sigma": {
+    "path": "sigma.json",
+    "method": "loglinear_two_clock_rms",
+    "events": [
+      311,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324
+    ],
+    "same_tier_only": true
+  },
+  "limitations": [
+    "Equal-weight arithmetic mean of the two component final forecasts.",
+    "If one component lacks a tier, the available component is used.",
+    "Sigma is fitted to the average model’s own 12-fold residuals.",
+    "Closing-tracker proxies are not official finals."
+  ],
+  "point_source_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b"
+}

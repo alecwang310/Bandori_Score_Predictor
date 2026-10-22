@@ -1,0 +1,4308 @@
+{
+  "method": "loglinear_two_clock_rms",
+  "version": 4,
+  "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+  "formula": "sigma = point * sqrt(exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)))",
+  "by_tier": {
+    "20": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": -3.386790420756024,
+        "log1p_elapsed": -0.8353764679029098,
+        "log1p_remaining": 1.05224823150414
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        20
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 279,
+      "fit": {
+        "r2_log_mse": 0.880950790977379,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.002997940674687026,
+          "events": 10,
+          "rows": 26,
+          "elapsed": 185.0,
+          "remaining": 7.3074145299145306,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.014349227928240678,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 163.14705882352942,
+          "remaining": 30.911486928104583,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.09272981954438865,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.15341691579229802,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 2.0569848157569517,
+          "events": 8,
+          "rows": 24,
+          "elapsed": 15.458333333333334,
+          "remaining": 201.04138888888892,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 2.680581283003754,
+          "events": 12,
+          "rows": 23,
+          "elapsed": 8.043478260869565,
+          "remaining": 185.08667874396136,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.2058683973819503,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.17954687624996352,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.1367821084049099,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.12149550067749926,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.07073377759619641,
+          "events": 12,
+          "rows": 144,
+          "elapsed": 148.39583333333334,
+          "remaining": 53.97888888888888,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "30": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 1.645060379627313,
+        "log1p_elapsed": -1.3462961445820847,
+        "log1p_remaining": 0.12274589790763166
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        30
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 284,
+      "fit": {
+        "r2_log_mse": 0.7671700560040586,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.0036428182103004293,
+          "events": 11,
+          "rows": 29,
+          "elapsed": 182.75862068965517,
+          "remaining": 7.241101532567051,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.012125196047135469,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.020144832865342258,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.033859087554401014,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.7497858485085717,
+          "events": 8,
+          "rows": 24,
+          "elapsed": 15.458333333333334,
+          "remaining": 201.04138888888892,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 1.3277737946038821,
+          "events": 12,
+          "rows": 23,
+          "elapsed": 8.043478260869565,
+          "remaining": 185.08667874396136,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.032468379815322586,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.0321923126408757,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.027272745705779443,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.025504128690335456,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.015903190902842427,
+          "events": 12,
+          "rows": 149,
+          "elapsed": 149.06040268456377,
+          "remaining": 52.657440343027595,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "40": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 0.32683341850587805,
+        "log1p_elapsed": -1.3969207905307894,
+        "log1p_remaining": 0.43662347139512364
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        40
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 284,
+      "fit": {
+        "r2_log_mse": 0.8952448742969946,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.001643348644496752,
+          "events": 11,
+          "rows": 29,
+          "elapsed": 182.75862068965517,
+          "remaining": 7.241101532567051,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.006787797863812124,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.014153167403750264,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.03484315735991698,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.7536727243639795,
+          "events": 8,
+          "rows": 24,
+          "elapsed": 15.458333333333334,
+          "remaining": 201.04138888888892,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 1.2107227795461,
+          "events": 12,
+          "rows": 23,
+          "elapsed": 8.043478260869565,
+          "remaining": 185.08667874396136,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.06082307083015023,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.04275790844684072,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.025926726248494094,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.024845626176840153,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.01015506459604454,
+          "events": 12,
+          "rows": 149,
+          "elapsed": 149.06040268456377,
+          "remaining": 52.657440343027595,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "50": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 0.5269664495909436,
+        "log1p_elapsed": -1.315943343268838,
+        "log1p_remaining": 0.3609228086077507
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        50
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 282,
+      "fit": {
+        "r2_log_mse": 0.9035180286322178,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.002578559601490194,
+          "events": 11,
+          "rows": 27,
+          "elapsed": 185.07407407407408,
+          "remaining": 7.5923148148148165,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.010736342656613974,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.018661727737835785,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.03884480984997673,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.6957742931895371,
+          "events": 8,
+          "rows": 24,
+          "elapsed": 15.458333333333334,
+          "remaining": 201.04138888888892,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 1.0695614490104217,
+          "events": 12,
+          "rows": 23,
+          "elapsed": 8.043478260869565,
+          "remaining": 185.08667874396136,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.0795105968240656,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.046938214923660786,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.03624718727044022,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.028127775059717322,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.011971508406139338,
+          "events": 12,
+          "rows": 147,
+          "elapsed": 149.02721088435374,
+          "remaining": 53.33985827664399,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "100": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": -0.4145518168292555,
+        "log1p_elapsed": -1.3655747070138897,
+        "log1p_remaining": 0.5949340802736257
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        100
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 286,
+      "fit": {
+        "r2_log_mse": 0.9527900370856427,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.001459415849170576,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.005890609798579143,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.011360901129412663,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.04601246201578565,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.766087501664615,
+          "events": 8,
+          "rows": 24,
+          "elapsed": 15.458333333333334,
+          "remaining": 201.04138888888892,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 1.043489016636972,
+          "events": 12,
+          "rows": 23,
+          "elapsed": 8.043478260869565,
+          "remaining": 185.08667874396136,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.10429864251404765,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.0603011148836806,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.04148835598095913,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.02293538462264677,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.01037622740778892,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "200": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": -1.927896834419499,
+        "log1p_elapsed": -1.322777935809269,
+        "log1p_remaining": 0.8128348884686313
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        200
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 286,
+      "fit": {
+        "r2_log_mse": 0.9561436942493854,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.0007767166755544877,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.002179955185266634,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.007549770008204188,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.03540247962529727,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.5358823682028644,
+          "events": 8,
+          "rows": 24,
+          "elapsed": 15.458333333333334,
+          "remaining": 201.04138888888892,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 0.8219260054575939,
+          "events": 12,
+          "rows": 23,
+          "elapsed": 8.043478260869565,
+          "remaining": 185.08667874396136,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.07672290907179141,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.043187649094716056,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.033517578869950874,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.024893087694434723,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.006812282755350893,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "300": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": -1.945552362919024,
+        "log1p_elapsed": -1.3485322597446434,
+        "log1p_remaining": 0.8050320545876648
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        300
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 286,
+      "fit": {
+        "r2_log_mse": 0.9542582174039894,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.000547057039035255,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.0023231995521807215,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.007882710679127384,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.02777873866359525,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.5120223855057082,
+          "events": 8,
+          "rows": 24,
+          "elapsed": 15.458333333333334,
+          "remaining": 201.04138888888892,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 0.7669010170205235,
+          "events": 12,
+          "rows": 23,
+          "elapsed": 8.043478260869565,
+          "remaining": 185.08667874396136,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.06492626512095234,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.04237279916742492,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.02349316584753069,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.015289844877244886,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.00624968857082318,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "400": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": -1.1864748455681142,
+        "log1p_elapsed": -1.2541599293210457,
+        "log1p_remaining": 0.5890230152267402
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        400
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 286,
+      "fit": {
+        "r2_log_mse": 0.9306272108752889,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.0011747092325049878,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.004268951923341805,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.01046043654868377,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.02896471766352282,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.4519047029869436,
+          "events": 8,
+          "rows": 24,
+          "elapsed": 15.458333333333334,
+          "remaining": 201.04138888888892,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 0.7117853515887825,
+          "events": 12,
+          "rows": 23,
+          "elapsed": 8.043478260869565,
+          "remaining": 185.08667874396136,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.05207177107408881,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.04317970451456063,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.026660828826556824,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.019568264698554633,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.008424639813939873,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "500": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 0.7355968800640402,
+        "log1p_elapsed": -1.3813037347473889,
+        "log1p_remaining": 0.2726055581262256
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        500
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 286,
+      "fit": {
+        "r2_log_mse": 0.919574122612165,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.002194458307604493,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.005267195707017131,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.009407984496034819,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.02595736793453891,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.423550075317303,
+          "events": 8,
+          "rows": 24,
+          "elapsed": 15.458333333333334,
+          "remaining": 201.04138888888892,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 0.6815011207867974,
+          "events": 12,
+          "rows": 23,
+          "elapsed": 8.043478260869565,
+          "remaining": 185.08667874396136,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.046187294578799186,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.037166549751968044,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.023641022038523595,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.017751244816212448,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.008138103300992247,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "1000": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 2.1134471363331215,
+        "log1p_elapsed": -1.3128064319966415,
+        "log1p_remaining": -0.2396425923840155
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        1000
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 286,
+      "fit": {
+        "r2_log_mse": 0.6951665210634397,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.0026458846196655765,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.008756566083692432,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.00931435159851426,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.008718482458250612,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.16874285225134866,
+          "events": 8,
+          "rows": 24,
+          "elapsed": 15.458333333333334,
+          "remaining": 201.04138888888892,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 0.316989085806855,
+          "events": 12,
+          "rows": 23,
+          "elapsed": 8.043478260869565,
+          "remaining": 185.08667874396136,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.014508065174020054,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.008261432940449386,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.006349123281885286,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.007586830563223005,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.00791452769674115,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "1500": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": -0.8153611528197144,
+        "log1p_elapsed": -1.1549980262984012,
+        "log1p_remaining": 0.324153864291585
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        1500
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 284,
+      "fit": {
+        "r2_log_mse": 0.8867113269245916,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.0014170699414985599,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.005307349280569561,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.008641822872819149,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.020459869028290147,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.18391536241696693,
+          "events": 7,
+          "rows": 22,
+          "elapsed": 15.909090909090908,
+          "remaining": 201.63608585858586,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 0.34265492645139567,
+          "events": 11,
+          "rows": 21,
+          "elapsed": 7.809523809523809,
+          "remaining": 184.19019841269844,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.04454401714642828,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.014176249949270902,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.010444873791951644,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.014263277357442115,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.0067595998679652195,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "2000": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 2.759579225752031,
+        "log1p_elapsed": -1.714039992335063,
+        "log1p_remaining": -0.07840109236743711
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        2000
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 284,
+      "fit": {
+        "r2_log_mse": 0.8948923606877879,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.0010406063607005646,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.0032590155216801983,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.003950726068636273,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.007142894431757624,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.20996844215442825,
+          "events": 7,
+          "rows": 22,
+          "elapsed": 15.909090909090908,
+          "remaining": 201.63608585858586,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 0.4811164065787262,
+          "events": 11,
+          "rows": 21,
+          "elapsed": 7.809523809523809,
+          "remaining": 184.19019841269844,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.02680978934052053,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.010680121741635613,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.00650329740609259,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.005004879841048941,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.0033663003900222237,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "3000": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 2.681820779998854,
+        "log1p_elapsed": -1.5730967369005175,
+        "log1p_remaining": -0.10272586159481079
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        3000
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 284,
+      "fit": {
+        "r2_log_mse": 0.8792119916998181,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.002016608143799271,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.004881344805363605,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.0071046291495166745,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.010204470413029493,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.24448098364478746,
+          "events": 7,
+          "rows": 22,
+          "elapsed": 15.909090909090908,
+          "remaining": 201.63608585858586,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 0.5439640055424041,
+          "events": 11,
+          "rows": 21,
+          "elapsed": 7.809523809523809,
+          "remaining": 184.19019841269844,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.03132918468705289,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.015907707593635603,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.009879254495562206,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.007635907648347648,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.005858335645351245,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "4000": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 4.223840973484002,
+        "log1p_elapsed": -1.7413898557025982,
+        "log1p_remaining": -0.27536663556860763
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        4000
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 284,
+      "fit": {
+        "r2_log_mse": 0.8727259532801469,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.002655763557881469,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.005707645537057482,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.007149110464779643,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.010299799362553213,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.31523406583528857,
+          "events": 7,
+          "rows": 22,
+          "elapsed": 15.909090909090908,
+          "remaining": 201.63608585858586,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 0.7282560704085654,
+          "events": 11,
+          "rows": 21,
+          "elapsed": 7.809523809523809,
+          "remaining": 184.19019841269844,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.0338749509544371,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.016032807262812098,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.010263072105345484,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.007092907801854711,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.005857023083959593,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "5000": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 6.028347678316776,
+        "log1p_elapsed": -1.9885966472325705,
+        "log1p_remaining": -0.4179182341055523
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        5000
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 284,
+      "fit": {
+        "r2_log_mse": 0.8618565874678031,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.003184812492668225,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.006316558216874924,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.007293765795729042,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.011337447383750948,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.5586652318232636,
+          "events": 7,
+          "rows": 22,
+          "elapsed": 15.909090909090908,
+          "remaining": 201.63608585858586,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 1.338512280072136,
+          "events": 11,
+          "rows": 21,
+          "elapsed": 7.809523809523809,
+          "remaining": 184.19019841269844,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.037414154974532134,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.018213687211451886,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.010898394250710614,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.0074877641629183195,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.005955050673375362,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "10000": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": -0.9317161114878619,
+        "log1p_elapsed": -1.1628328101367413,
+        "log1p_remaining": 0.20979639991918314
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        10000
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 283,
+      "fit": {
+        "r2_log_mse": 0.9463415495298849,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.001443848168466475,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.002549715915698933,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.002787596973082024,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.018972302172215027,
+          "events": 12,
+          "rows": 123,
+          "elapsed": 64.02439024390245,
+          "remaining": 135.24362466124666,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.04840861841210231,
+          "events": 7,
+          "rows": 21,
+          "elapsed": 16.285714285714285,
+          "remaining": 200.85686507936512,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 0.08419598158371373,
+          "events": 10,
+          "rows": 20,
+          "elapsed": 7.8,
+          "remaining": 182.49972222222226,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.03468918673311059,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.01605546672082129,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.007342694189285612,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.004206655705458038,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.0023261875001297006,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "20000": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 4.004630602871428,
+        "log1p_elapsed": -2.5269900494356974,
+        "log1p_remaining": 0.5679373372467158
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        218.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        20000
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 279,
+      "fit": {
+        "r2_log_mse": 0.588744294235183,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.00041617194849744645,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.0009492918433591471,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.0014253687094505057,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 9.151491700438802,
+          "events": 12,
+          "rows": 120,
+          "elapsed": 65.44166666666666,
+          "remaining": 135.1580555555556,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.399650451538048,
+          "events": 7,
+          "rows": 20,
+          "elapsed": 16.75,
+          "remaining": 201.14972222222224,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 49.074219157552456,
+          "events": 9,
+          "rows": 16,
+          "elapsed": 7.9375,
+          "remaining": 189.93722222222223,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.04936107965168381,
+          "events": 12,
+          "rows": 12,
+          "elapsed": 19.5,
+          "remaining": 174.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.01592592420488977,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 35.878787878787875,
+          "remaining": 157.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.004915056223143529,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 59.878787878787875,
+          "remaining": 133.93911616161617,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.003631111270434218,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.0012679155755476862,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "30000": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": -10.813736453113036,
+        "log1p_elapsed": -0.36229605598478065,
+        "log1p_remaining": 2.0836389936797293
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        217.99972222222223
+      ],
+      "elapsed_range_hours": [
+        7.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        30000
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 262,
+      "fit": {
+        "r2_log_mse": 0.7298698851441086,
+        "cells": 11,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.00018508242724587145,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.003776033986264415,
+          "events": 12,
+          "rows": 36,
+          "elapsed": 163.83333333333334,
+          "remaining": 30.666388888888896,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.12761267186776923,
+          "events": 12,
+          "rows": 72,
+          "elapsed": 127.83333333333333,
+          "remaining": 66.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.033793368552128784,
+          "events": 11,
+          "rows": 109,
+          "elapsed": 69.53211009174312,
+          "remaining": 135.10981396534154,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 4.880398563982462,
+          "events": 5,
+          "rows": 14,
+          "elapsed": 20.571428571428573,
+          "remaining": 200.49972222222226,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 6.716205848547156,
+          "events": 4,
+          "rows": 5,
+          "elapsed": 8.4,
+          "remaining": 203.79972222222221,
+          "axis": "elapsed",
+          "bucket": [
+            0,
+            12
+          ]
+        },
+        {
+          "mse": 0.09605101611850599,
+          "events": 11,
+          "rows": 11,
+          "elapsed": 19.545454545454547,
+          "remaining": 178.6360858585859,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.02404351831247822,
+          "events": 10,
+          "rows": 30,
+          "elapsed": 35.93333333333333,
+          "remaining": 161.86638888888882,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.551662224841508,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 60.16129032258065,
+          "remaining": 136.22552867383516,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.07301276740098744,
+          "events": 12,
+          "rows": 34,
+          "elapsed": 84.08823529411765,
+          "remaining": 109.97031045751635,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.008280428247878361,
+          "events": 12,
+          "rows": 151,
+          "elapsed": 149.72847682119206,
+          "remaining": 51.99309970566593,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "40000": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 11.99060517946487,
+        "log1p_elapsed": -2.5930025922481166,
+        "log1p_remaining": -0.793556174670518
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        206.99972222222223
+      ],
+      "elapsed_range_hours": [
+        19.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        40000
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 12,
+      "calibration_rows": 247,
+      "fit": {
+        "r2_log_mse": 0.45744061822390214,
+        "cells": 10,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.08053830208771387,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 183.83870967741936,
+          "remaining": 6.935206093189967,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.001555853298032737,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 167.5151515151515,
+          "remaining": 30.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.023519441061745285,
+          "events": 11,
+          "rows": 66,
+          "elapsed": 131.5151515151515,
+          "remaining": 66.66638888888887,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 0.5117767882248532,
+          "events": 11,
+          "rows": 108,
+          "elapsed": 70.0,
+          "remaining": 135.3330555555556,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 0.24318275692717198,
+          "events": 3,
+          "rows": 9,
+          "elapsed": 27.333333333333332,
+          "remaining": 198.66638888888892,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 0.9153084194007839,
+          "events": 10,
+          "rows": 10,
+          "elapsed": 19.6,
+          "remaining": 185.39972222222224,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 0.32601320537889855,
+          "events": 10,
+          "rows": 30,
+          "elapsed": 35.93333333333333,
+          "remaining": 161.86638888888882,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.02366239386714521,
+          "events": 10,
+          "rows": 30,
+          "elapsed": 59.93333333333333,
+          "remaining": 137.86638888888893,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.007694845706221665,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 84.16129032258064,
+          "remaining": 113.77391577060935,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.07658573128587685,
+          "events": 12,
+          "rows": 146,
+          "elapsed": 150.9041095890411,
+          "remaining": 52.45177701674277,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "50000": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 2.874487064405503,
+        "log1p_elapsed": -2.9676653936846016,
+        "log1p_remaining": 1.8918194870220484
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.9997222222222,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        206.99972222222223
+      ],
+      "elapsed_range_hours": [
+        19.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        50000
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 11,
+      "calibration_rows": 238,
+      "fit": {
+        "r2_log_mse": 0.7230787385434373,
+        "cells": 10,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.0001975163159508291,
+          "events": 10,
+          "rows": 28,
+          "elapsed": 187.75,
+          "remaining": 6.964007936507938,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.0009330857712947796,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 167.5151515151515,
+          "remaining": 30.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 2.210755604476859,
+          "events": 11,
+          "rows": 66,
+          "elapsed": 131.5151515151515,
+          "remaining": 66.66638888888887,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 4.602288904949261,
+          "events": 10,
+          "rows": 103,
+          "elapsed": 72.23300970873787,
+          "remaining": 135.1259358144553,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 2.552196297425162,
+          "events": 3,
+          "rows": 8,
+          "elapsed": 28.375,
+          "remaining": 197.62472222222223,
+          "axis": "remaining",
+          "bucket": [
+            192,
+            null
+          ]
+        },
+        {
+          "mse": 94.42073677569878,
+          "events": 6,
+          "rows": 6,
+          "elapsed": 20.0,
+          "remaining": 190.99972222222223,
+          "axis": "elapsed",
+          "bucket": [
+            12,
+            24
+          ]
+        },
+        {
+          "mse": 14.142336883225358,
+          "events": 10,
+          "rows": 28,
+          "elapsed": 36.25,
+          "remaining": 166.39257936507934,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.21837850764420724,
+          "events": 10,
+          "rows": 30,
+          "elapsed": 59.93333333333333,
+          "remaining": 137.86638888888893,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.011221508147159363,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 84.16129032258064,
+          "remaining": 113.77391577060935,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.0025819861402486223,
+          "events": 11,
+          "rows": 143,
+          "elapsed": 150.979020979021,
+          "remaining": 53.41230963480964,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "70000": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 2.647665410206181,
+        "log1p_elapsed": -2.4558979664531138,
+        "log1p_remaining": 1.5588946953531644
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        324
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        129.99972222222223,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        194.99972222222223
+      ],
+      "elapsed_range_hours": [
+        31.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        70000
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 11,
+      "calibration_rows": 212,
+      "fit": {
+        "r2_log_mse": 0.9401609953092046,
+        "cells": 8,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.0008781312479849406,
+          "events": 10,
+          "rows": 28,
+          "elapsed": 187.75,
+          "remaining": 6.964007936507938,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.015623866693418607,
+          "events": 11,
+          "rows": 33,
+          "elapsed": 167.5151515151515,
+          "remaining": 30.66638888888889,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.13097723688195514,
+          "events": 11,
+          "rows": 62,
+          "elapsed": 136.43548387096774,
+          "remaining": 66.14488351254481,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 1.1894482788457856,
+          "events": 10,
+          "rows": 87,
+          "elapsed": 79.34482758620689,
+          "remaining": 131.06868773946368,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 5.725018001147937,
+          "events": 7,
+          "rows": 13,
+          "elapsed": 38.61538461538461,
+          "remaining": 173.53818376068378,
+          "axis": "elapsed",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 1.2970921193955063,
+          "events": 9,
+          "rows": 25,
+          "elapsed": 60.36,
+          "remaining": 147.15972222222226,
+          "axis": "elapsed",
+          "bucket": [
+            48,
+            72
+          ]
+        },
+        {
+          "mse": 0.18414254007137593,
+          "events": 11,
+          "rows": 31,
+          "elapsed": 84.16129032258064,
+          "remaining": 113.77391577060935,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.011465699196361145,
+          "events": 11,
+          "rows": 143,
+          "elapsed": 150.979020979021,
+          "remaining": 53.41230963480964,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    },
+    "100000": {
+      "version": 3,
+      "point_model": "average",
+      "method": "loglinear_two_clock_rms",
+      "link": "log",
+      "coefficients": {
+        "intercept": 37.32846256600745,
+        "log1p_elapsed": -8.21334325417247,
+        "log1p_remaining": 0.5267732130077384
+      },
+      "formula": "mse = exp(a + b*log1p(elapsed_hours) + c*log1p(hours_remaining)); sigma = point*sqrt(mse); elapsed = event_duration_hours - hours_remaining",
+      "calibration_event_ids": [
+        311,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321
+      ],
+      "excluded_event_ids": [
+        325,
+        326
+      ],
+      "available_at": 1790647200.0,
+      "characteristic_days": 730,
+      "source_model_sha256": "20f05fe8152befe89adc6d8f45cb561c463358894539f08de46f4e0ea7b03e4b",
+      "event_duration_range_hours": [
+        177.99972222222223,
+        225.99972222222223
+      ],
+      "remaining_range_hours": [
+        1.9997222222222222,
+        145.99972222222223
+      ],
+      "elapsed_range_hours": [
+        70.0,
+        224.0
+      ],
+      "min_relative": 0.01,
+      "max_relative": 1.5,
+      "sigma_tiers": [
+        100000
+      ],
+      "top_rank_fallback": null,
+      "calibration_events": 9,
+      "calibration_rows": 116,
+      "fit": {
+        "r2_log_mse": 0.8988994546986033,
+        "cells": 6,
+        "minimum_events": 3
+      },
+      "cells": [
+        {
+          "mse": 0.008267866362939367,
+          "events": 8,
+          "rows": 22,
+          "elapsed": 195.5,
+          "remaining": 7.045176767676771,
+          "axis": "remaining",
+          "bucket": [
+            0,
+            24
+          ]
+        },
+        {
+          "mse": 0.013933729743173535,
+          "events": 8,
+          "rows": 23,
+          "elapsed": 179.7826086956522,
+          "remaining": 30.304070048309175,
+          "axis": "remaining",
+          "bucket": [
+            24,
+            48
+          ]
+        },
+        {
+          "mse": 0.07242226164989428,
+          "events": 7,
+          "rows": 41,
+          "elapsed": 147.2439024390244,
+          "remaining": 66.1704539295393,
+          "axis": "remaining",
+          "bucket": [
+            48,
+            96
+          ]
+        },
+        {
+          "mse": 8.380801226192725,
+          "events": 6,
+          "rows": 30,
+          "elapsed": 104.2,
+          "remaining": 112.99972222222226,
+          "axis": "remaining",
+          "bucket": [
+            96,
+            192
+          ]
+        },
+        {
+          "mse": 13.33361785559297,
+          "events": 4,
+          "rows": 8,
+          "elapsed": 86.5,
+          "remaining": 125.62472222222223,
+          "axis": "elapsed",
+          "bucket": [
+            72,
+            96
+          ]
+        },
+        {
+          "mse": 0.4111480016455082,
+          "events": 9,
+          "rows": 107,
+          "elapsed": 157.3551401869159,
+          "remaining": 54.34551661474557,
+          "axis": "elapsed",
+          "bucket": [
+            96,
+            null
+          ]
+        }
+      ],
+      "limitations": [
+        "Log-linear fit on event-balanced time-cell means; it is a smooth approximation, not a per-cell lookup.",
+        "Time-only: it does not condition on tier, event type or score age.",
+        "The fit is calibrated on inspected post-rule events; it is not a fresh test.",
+        "RMS includes bias; no normality or 68% coverage guarantee.",
+        "Early-event and 192h+ remaining cells are noisy; the fit is extrapolative there.",
+        "Same-tier calibration from physically outcome-isolated twelve-event LOO; inspected outcomes, not a prospective coverage test."
+      ]
+    }
+  },
+  "calibration_event_ids": [
+    311,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324
+  ],
+  "excluded_event_ids": [
+    325,
+    326
+  ],
+  "same_tier_only": true,
+  "residual_source": "runs/dual_production_20261021/average_residuals.csv",
+  "residual_sha256": "aedc56221a3bdab8107fd1c9ef0263cfbfd1ad8667c843dc0472e00f8e3ef806",
+  "limitations": [
+    "RMS includes bias; selected/inspected LOO outcomes, no normality or68% coverage guarantee.",
+    "Recent Ridge now uses all12 outcome-isolated same-recipe folds; old average is calibrated from its own combined errors, not independent component variances."
+  ]
+}

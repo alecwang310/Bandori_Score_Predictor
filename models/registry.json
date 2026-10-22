@@ -1,0 +1,23 @@
+{
+  "api_version": 1,
+  "default": "both",
+  "default_configurations": [
+    "average",
+    "ridge"
+  ],
+  "models": {
+    "ridge": {
+      "package": "ridge"
+    },
+    "previous_ridge": {
+      "package": "previous_ridge"
+    },
+    "stack_mf": {
+      "package": "stack_mf"
+    },
+    "average": {
+      "package": "average"
+    }
+  },
+  "selection_basis": "Report two configurations separately: previous Ridge/Stack-MF equal average, and recent Ridge. No average across these configurations; no duration switch."
+}
